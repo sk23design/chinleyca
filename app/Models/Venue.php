@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class Venue extends Model
 {
     use HasFactory;
 
+    // protected $primaryKey = 'slug';
 
-    public function venue()
+    public function events()
     {
-        return $this->belongsTo(\App\Models\Venue::class, 'venue_id', 'id');
+        return $this->hasMany(\App\Models\Event::class);
     }
 }

@@ -3,19 +3,20 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Event extends Resource
+class Venue extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Event::class;
+    public static $model = \App\Models\Venue::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -31,7 +32,6 @@ class Event extends Resource
      */
     public static $search = [
         'id',
-        'name'
     ];
 
     /**
@@ -45,7 +45,10 @@ class Event extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make('Name'),
-            BelongsTo::make(__('Venue'))
+            Slug::make('Slug')->from('name'),
+            Text::make('Intro'),
+            Image::make('Cover Image'),
+
         ];
     }
 
