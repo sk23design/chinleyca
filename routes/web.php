@@ -15,16 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome',
+    ['venues' => \App\Models\Venue::all()]
+);
 });
-
 
 Route::get('/venues', function () {
     return view('venues', ['venues' => \App\Models\Venue::all()]);
 });
 
-
 Route::get('/venue/{venue:slug}', function (Venue $venue) {
-
     return view('venue', ['venue' => $venue]);
 });
