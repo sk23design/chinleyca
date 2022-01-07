@@ -43,7 +43,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         Gate::define('viewNova', function ($user) {
             return in_array($user->email, [
-                //
             ]);
         });
     }
@@ -56,7 +55,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            new Help,
+            new Help(),
         ];
     }
 
@@ -77,7 +76,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [new \Czemu\NovaCalendarTool\NovaCalendarTool()];
     }
 
     /**
@@ -87,6 +86,5 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function register()
     {
-        //
     }
 }

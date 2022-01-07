@@ -27,3 +27,7 @@ Route::get('/venues', function () {
 Route::get('/venue/{venue:slug}', function (Venue $venue) {
     return view('venue', ['venue' => $venue]);
 });
+
+Route::get('/events', function () {
+    return view('events', ['events' => \App\Models\Event::all()]);
+});

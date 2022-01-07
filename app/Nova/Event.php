@@ -4,9 +4,14 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\Trix;
+use Laravel\Nova\Panel;
+use Silvanite\NovaFieldCheckboxes\Checkboxes;
 
 class Event extends Resource
 {
@@ -31,28 +36,60 @@ class Event extends Resource
      */
     public static $search = [
         'id',
-        'name'
+        'name',
     ];
 
     /**
      * Get the fields displayed by the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function fields(Request $request)
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Name'),
-            BelongsTo::make(__('Venue'))
+            Text::make('Title'),
+            BelongsTo::make(__('Venue')),
+            Select::make('type')->options(['Private Booking', 'Public Booking', 'Maintenance', 'Not Available', 'Other']),
+            Trix::make('description'),
+            DateTime::make('start'),
+            DateTime::make('end'),
+            Boolean::make('active'),
+            Boolean::make('recurring'),
+            Checkboxes::make('Categories')
+    ->options(\App\Models\Category::pluck('name', 'id')->toArray())->withoutTypeCasting()
+    ->hideFromIndex(),
+
+    new Panel('Recurring', $this->recurringPanel()),
+        ];
+    }
+
+    public function recurringPanel()
+    {
+        return [
+            Checkboxes::make('Days')
+    ->options([1 => 'Monday',
+    2 => 'Tuesday',
+    3 => 'Wednesday',
+    4 => 'Thursday',
+    5 => 'Friday',
+    6 => 'Saturday',
+    7 => 'Sunday',
+    ])->withoutTypeCasting()
+    ->hideFromIndex(),
+
+    Checkboxes::make('Every')
+    ->options([1 => 'Week',
+    2 => 'Month',
+    3 => 'Year',
+    ])->withoutTypeCasting()
+    ->hideFromIndex(),
         ];
     }
 
     /**
      * Get the cards available for the request.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function cards(Request $request)
@@ -63,7 +100,6 @@ class Event extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function filters(Request $request)
@@ -74,7 +110,6 @@ class Event extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function lenses(Request $request)
@@ -85,7 +120,6 @@ class Event extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function actions(Request $request)

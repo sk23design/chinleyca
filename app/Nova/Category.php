@@ -3,27 +3,24 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 
-class Venue extends Resource
+class Category extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Venue::class;
+    public static $model = \App\Models\Category::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -31,7 +28,7 @@ class Venue extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name',
     ];
 
     /**
@@ -43,11 +40,7 @@ class Venue extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Image::make('Cover Image')->path('images/venues/'),
-            Text::make('Name'),
-            Slug::make('Slug')->from('name')->hideFromIndex(),
-            Text::make('Intro')->hideFromIndex(),
-            HasMany::make('Events'),
+            Text::make(__('Name'), 'name')->sortable()->sortable(),
         ];
     }
 

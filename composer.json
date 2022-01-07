@@ -10,6 +10,7 @@
     }],
     "require": {
         "php": "^7.3|^8.0",
+        "czemu/nova-calendar-tool": "^1.3",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": "^2.7",
@@ -19,7 +20,9 @@
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.7",
         "manogi/nova-tiptap": "^1.4",
-        "optimistdigital/nova-sortable": "^2.3"
+        "optimistdigital/nova-sortable": "^2.3",
+        "silvanite/novafieldcheckboxes": "^1.2",
+        "spatie/nova-tags-field": "^3.4"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

@@ -9,6 +9,13 @@ class Event extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'start' => 'datetime',
+        'end' => 'datetime',
+        'categories' => 'array',
+        'days' => 'array',
+        'every' => 'array',
+    ];
 
     public function venue()
     {

@@ -9,32 +9,33 @@
 @section('content')
 
 {{-- Intro --}}
-<div class="gradient-to-b bg-blue-200">
-    <div class="w-48 mx-auto p-8"> @include('assets.logo')</div>
-    <div class="text-green-600">@include('assets.low-hills')</div>
-</div>
-<div class="text-green-600 z-10">
-    @include('assets.wave')
-</div>
-<section class="md:py-12">
-    <div class="max-w-6xl mx-auto p-8  rounded-md">
-        <h1 class="max-w-4xl  mx-auto text-4xl effect-4 text-gray-600 text-center">
+<section class="relative">
+
+
+    <div class="gradient-to-b bg-blue-200">
+        <div class="w-48 mx-auto p-8"> @include('assets.logo')</div>
+        <div class="text-green-600">@include('assets.low-hills')</div>
+    </div>
+    <div class="text-green-600 z-10">
+        @include('assets.wave')
+    </div>
+    <div class="md:absolute top-32 w-full mx-auto p-8  rounded-md text-gray-800">
+        <h1 class="max-w-2xl  mx-auto text-4xl effect-4 text-center">
             Chinley, Buxworth & Brownside Community Association
         </h1>
 
-        <p class="mt-4 text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias eligendi incidunt
-            quaerat,
-            veniam recusandae cupiditate. Nihil eligendi voluptatum voluptatibus mollitia.</p>
+
 
 
     </div>
 </section>
-<div class="bg-gray-100 text-white z-10">
+
+<div class="bg-pink-600 text-white z-10">
     @include('assets.wave')
 </div>
-<section class="py-12 bg-gray-100">
-    <div class="max-w-4xl px-8 mx-auto">
-        <h2 class=" text-4xl effect-4 text-gray-600 text-center">
+<section class="py-12 bg-pink-600">
+    <div class="max-w-4xl px-8 mx-auto text-white ">
+        <h2 class=" text-4xl effect-4 text-center">
             What's On
         </h2>
         <p class="mt-4 text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias eligendi incidunt
