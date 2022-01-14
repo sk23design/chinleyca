@@ -1,9 +1,9 @@
 <footer>
-    <div class="text-green-500">
+    <div class="text-green-500 w-full">
         @include('assets.low-hills')
     </div>
     <div class="bg-green-500">
-        <div class="w-32 mx-auto">
+        <div class="w-32 mx-auto -mt-32">
             @include('assets.logo-white')
         </div>
         <div>
