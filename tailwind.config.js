@@ -13,6 +13,7 @@ module.exports = {
                 'brand-green': '#049669',
                 'brand-lime': '#8bc53f',
                 'lime': colors.lime,
+                'teal': colors.teal,
             }
 
         },

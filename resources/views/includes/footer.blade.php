@@ -1,9 +1,9 @@
-<footer>
+<footer class="bg-gray-800 -mt-1">
     <div class="text-green-500 w-full">
         @include('assets.low-hills')
     </div>
-    <div class="bg-green-500">
-        <div class="w-32 mx-auto -mt-32">
+    <div class="bg-green-500 -mt-1">
+        <div class="w-32 mx-auto">
             @include('assets.logo-white')
         </div>
         <div>
@@ -11,5 +11,8 @@
                 Registered Charity 1165104 (England & Wales)
             </p>
         </div>
+    </div>
+    <div class="text-white p-4 max-w-7xl mx-auto px-8">
+        <small>{{date('Y')}} Design and Development By <span class="text-pink-600">SK23Design</span> </small>
     </div>
 </footer>

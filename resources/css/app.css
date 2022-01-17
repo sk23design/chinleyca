@@ -12,55 +12,11 @@ h3,
 h4,
 nav > ul {
     font-family: "Helvetica Neue", sans-serif;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 [x-cloak] {
     display: none !important;
-}
-
-.btn {
-    @apply rounded-md border-2 border-blue-500 text-blue-400 px-4 py-1;
-}
-
-.download {
-    @apply rounded-md border-2 border-blue-500 text-blue-400 px-4 py-1 transition-all;
-}
-
-.download:hover {
-    @apply rounded-md border-2 border-blue-500 bg-blue-500 text-white;
-}
-
-.information {
-    @apply border-8 border-blue-500 rounded-2xl bg-white text-blue-500 transition-all;
-}
-
-.reception {
-    @apply border-8 border-red-500 rounded-2xl bg-red-400 text-white hover:bg-red-500 transition-all;
-}
-
-.class-1 {
-    @apply border-8 border-yellow-500 rounded-2xl bg-yellow-400 text-white hover:bg-yellow-500 transition-all;
-}
-
-.class-2 {
-    @apply border-8 border-blue-500 rounded-2xl bg-blue-400 text-white hover:bg-blue-500 transition-all;
-}
-
-.class-3 {
-    @apply border-8 border-purple-500 rounded-2xl bg-purple-400 text-white hover:bg-purple-500 transition-all;
-}
-
-.class-4 {
-    @apply border-8 border-green-500 rounded-2xl bg-green-400 text-white hover:bg-green-500 transition-all;
-}
-
-.class-5 {
-    @apply border-8 border-pink-500 rounded-2xl bg-pink-400 text-white hover:bg-pink-500 transition-all;
-}
-
-.class-6 {
-    @apply border-8 border-indigo-500 rounded-2xl bg-indigo-400 text-white hover:bg-indigo-500 transition-all;
 }
 
 .content h2 {
@@ -111,4 +67,8 @@ nav > ul {
     text-shadow: 1px 1px 1px #ccc, 1px 2px 1px #ccc, 1px 3px 1px #ccc,
         1px 4px 1px #ccc, 1px 5px 1px #ccc, 1px 6px 1px #ccc, 1px 7px 1px #ccc,
         1px 8px 1px #ccc, 1px 9px 1px #f5f5f5;
+}
+
+.link {
+    @apply px-4 py-3 shadow-md hover:shadow-xl border-4 border-white font-bold bg-white  rounded-full;
 }

@@ -1,4 +1,4 @@
-<div class="bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+<div class="bg-gray-100 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
     <a href="/venue/{{ $venue->slug }}">
         <img class="h-64 object-cover w-full" src="{{ asset($venue->cover_image) }}" alt="" srcset="">
 
@@ -8,8 +8,8 @@
                 {{ $venue->name }}</h2>
 
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{$venue->intro()}}</p>
-            <button class="inline-flex align-middle items-center text-gray-600 font-bold">
-                <span>Read more</span>
+            <button class="inline-flex align-middle items-center text-pink-600 font-bold">
+                <span>Venue Details</span>
                 <svg class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"

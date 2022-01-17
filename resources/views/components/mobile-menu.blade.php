@@ -1,6 +1,6 @@
 {{-- Mobile Nav --}}
 <div class="">
-    <div class="fixed top-0 left-0 w-full bg-gray-800 z-200 bg-opacity-80" x-show.transition="show"
+    <div class="fixed top-0 left-0 w-full bg-gray-800 z-50 bg-opacity-80" x-show.transition="show"
         @click.away="show = false" x-cloak>
         <nav>
             <ul class=" text-2xl font-bold p-10 text-center">
@@ -30,6 +30,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
+
         </div>
     </div>
 </div>

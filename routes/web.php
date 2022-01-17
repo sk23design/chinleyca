@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome',
-    ['venues' => \App\Models\Venue::all()]
+    ['venues' => \App\Models\Venue::all(), 'events' => \App\Models\Event::all()]
 );
 });
 
