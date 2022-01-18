@@ -17,6 +17,7 @@
         "laravel/framework": "^8.65",
         "laravel/nova": "*",
         "laravel/sanctum": "^2.11",
+        "laravel/scout": "^9.4",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.7",
         "manogi/nova-tiptap": "^1.4",

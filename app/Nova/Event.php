@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Panel;
@@ -49,6 +50,7 @@ class Event extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make('Title'),
+            Slug::make('Slug')->from('title'),
             BelongsTo::make(__('Venue')),
             Select::make('type')->options(['Private Booking', 'Public Booking', 'Maintenance', 'Not Available', 'Other']),
             Trix::make('description'),
@@ -57,10 +59,10 @@ class Event extends Resource
             Boolean::make('active'),
             Boolean::make('recurring'),
             Checkboxes::make('Categories')
-    ->options(\App\Models\Category::pluck('name', 'id')->toArray())->withoutTypeCasting()
-    ->hideFromIndex(),
+                ->options(\App\Models\Category::pluck('name', 'id')->toArray())->withoutTypeCasting()
+                ->hideFromIndex(),
 
-    new Panel('Recurring', $this->recurringPanel()),
+            new Panel('Recurring', $this->recurringPanel()),
         ];
     }
 
@@ -68,22 +70,24 @@ class Event extends Resource
     {
         return [
             Checkboxes::make('Days')
-    ->options([1 => 'Monday',
-    2 => 'Tuesday',
-    3 => 'Wednesday',
-    4 => 'Thursday',
-    5 => 'Friday',
-    6 => 'Saturday',
-    7 => 'Sunday',
-    ])->withoutTypeCasting()
-    ->hideFromIndex(),
+                ->options([
+                    1 => 'Monday',
+                    2 => 'Tuesday',
+                    3 => 'Wednesday',
+                    4 => 'Thursday',
+                    5 => 'Friday',
+                    6 => 'Saturday',
+                    7 => 'Sunday',
+                ])->withoutTypeCasting()
+                ->hideFromIndex(),
 
-    Checkboxes::make('Every')
-    ->options([1 => 'Week',
-    2 => 'Month',
-    3 => 'Year',
-    ])->withoutTypeCasting()
-    ->hideFromIndex(),
+            Checkboxes::make('Every')
+                ->options([
+                    1 => 'Week',
+                    2 => 'Month',
+                    3 => 'Year',
+                ])->withoutTypeCasting()
+                ->hideFromIndex(),
         ];
     }
 

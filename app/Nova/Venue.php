@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
@@ -45,8 +46,12 @@ class Venue extends Resource
             ID::make(__('ID'), 'id')->sortable(),
             Image::make('Cover Image')->path('images/venues/'),
             Text::make('Name'),
+            Text::make(__('Town / Village'), 'town')->hideFromIndex(),
             Slug::make('Slug')->from('name')->hideFromIndex(),
             Text::make('Intro')->hideFromIndex(),
+            Text::make('Website')->hideFromIndex(),
+
+
             HasMany::make('Events'),
         ];
     }

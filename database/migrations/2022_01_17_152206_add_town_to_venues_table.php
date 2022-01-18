@@ -14,7 +14,7 @@ class AddTownToVenuesTable extends Migration
     public function up()
     {
         Schema::table('venues', function (Blueprint $table) {
-            $table->string('town')->nullable();
+
             $table->string('long')->nullable();
             $table->string('lat')->nullable();
         });

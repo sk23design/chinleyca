@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 
 class Category extends Resource
@@ -40,7 +41,9 @@ class Category extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make(__('Name'), 'name')->sortable()->sortable(),
+            Image::make(__('Image'), 'thumbnail_image')->hideFromIndex(),
+            Text::make(__('Name'), 'name')->sortable(),
+            // Image::make(__('Cover Image'), 'cover_image')->hideFromIndex(),
         ];
     }
 

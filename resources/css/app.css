@@ -72,3 +72,14 @@ nav > ul {
 .link {
     @apply px-4 py-3 shadow-md hover:shadow-xl border-4 border-white font-bold bg-white  rounded-full;
 }
+
+.tag-event{
+
+    @apply rounded-full bg-pink-600 py-1 px-4 text-white;
+
+}
+.tag-venue{
+
+    @apply rounded-full bg-teal-600 p-1 px-4 text-white;
+
+}

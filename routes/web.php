@@ -1,7 +1,10 @@
 <?php
 
+use App\Models\Event;
 use App\Models\Venue;
 use Illuminate\Support\Facades\Route;
+
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome',
-    ['venues' => \App\Models\Venue::all(), 'events' => \App\Models\Event::all()]
-);
+    return view(
+        'welcome',
+        ['venues' => \App\Models\Venue::all(), 'events' => \App\Models\Event::all()]
+    );
 });
 
 Route::get('/venues', function () {
@@ -29,5 +33,20 @@ Route::get('/venue/{venue:slug}', function (Venue $venue) {
 });
 
 Route::get('/events', function () {
-    return view('events', ['events' => \App\Models\Event::all()]);
+    return view('events', ['events' => Event::all()]);
+});
+
+Route::get('/event/{event:slug}', function (Event $event) {
+    return view('event', ['event' => $event]);
+});
+
+Route::get('/search', function (Request $request) {
+    $venues =  Venue::search($request->search)->get()->toArray();
+    $events = Event::search($request->search)->get()->toArray();
+
+    $results = [];
+    $results['venues'] = $venues;
+    $results['events'] = $events;
+
+    return $results;
 });
