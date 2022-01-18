@@ -7,15 +7,18 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Panel;
+use Manogi\Tiptap\Tiptap;
 use Silvanite\NovaFieldCheckboxes\Checkboxes;
 
 class Event extends Resource
 {
+    public static $group = 'Content';
+
     /**
      * The model the resource corresponds to.
      *
@@ -48,21 +51,36 @@ class Event extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Title'),
-            Slug::make('Slug')->from('title'),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
+
+            // Image::make('cover_image')->hideFromIndex()->hideFromIndex(),
+            Image::make('thumbnail'),
+
+            Text::make('Title')->sortable(),
+            Slug::make('Slug')->from('title')->hideFromIndex(),
             BelongsTo::make(__('Venue')),
-            Select::make('type')->options(['Private Booking', 'Public Booking', 'Maintenance', 'Not Available', 'Other']),
-            Trix::make('description'),
-            DateTime::make('start'),
-            DateTime::make('end'),
-            Boolean::make('active'),
+            Select::make('type')->options(['Private Booking', 'Public Booking', 'Maintenance', 'Not Available', 'Other'])->hideFromIndex(),
+            Tiptap::make('description'),
+            DateTime::make('start')->hideFromIndex(),
+            DateTime::make('end')->hideFromIndex(),
+            Boolean::make('active')->default(true),
             Boolean::make('recurring'),
             Checkboxes::make('Categories')
                 ->options(\App\Models\Category::pluck('name', 'id')->toArray())->withoutTypeCasting()
                 ->hideFromIndex(),
 
             new Panel('Recurring', $this->recurringPanel()),
+            new Panel('Contacts', $this->contactPanel()),
+        ];
+    }
+
+    public function contactPanel()
+    {
+        return [
+            Text::make('Website')->hideFromIndex(),
+            Text::make('Contact Name')->hideFromIndex(),
+            Text::make('Contact Email')->hideFromIndex(),
+            Text::make('Contact Number')->hideFromIndex(),
         ];
     }
 

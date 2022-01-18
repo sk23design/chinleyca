@@ -1,16 +1,17 @@
 <div class="bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
     <a href="/event/{{ $event->slug }}">
-        <img class="h-64 object-cover w-full"
-            src="{{ $event->cover_image ? asset($event->cover_image) : asset('storage/images/events/yoga.jpg') }}"
-            alt="" srcset="">
+        <img class="h-64 object-cover w-full bg-gray-200"
+            src="{{ $event->thumbnail ? asset($event->thumbnail) : asset($event->venue->cover_image) }}" alt=""
+            srcset="">
 
         <div class="p-5">
 
             <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 {{ $event->title }}</h2>
-
+            <p>{{$event->venue->name}}</p>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{$event->intro}}</p>
-            <button class="inline-flex align-middle items-center text-pink-600 font-bold">
+            {{$event->getRecurringDescription()}}
+            <button class="flex align-middle items-center text-pink-600 font-bold mt-4">
                 <span>Read more</span>
                 <svg class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">

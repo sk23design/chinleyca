@@ -3,7 +3,6 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
@@ -12,6 +11,7 @@ use Laravel\Nova\Fields\Text;
 
 class Venue extends Resource
 {
+    public static $group = 'Venues';
     /**
      * The model the resource corresponds to.
      *
@@ -48,11 +48,11 @@ class Venue extends Resource
             Text::make('Name'),
             Text::make(__('Town / Village'), 'town')->hideFromIndex(),
             Slug::make('Slug')->from('name')->hideFromIndex(),
-            Text::make('Intro')->hideFromIndex(),
+            //Text::make('Intro')->hideFromIndex(),
             Text::make('Website')->hideFromIndex(),
 
-
             HasMany::make('Events'),
+            HasMany::make('Rooms'),
         ];
     }
 

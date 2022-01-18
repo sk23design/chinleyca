@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use Laravel\Scout\Searchable;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Event extends Model
 {
@@ -41,19 +41,20 @@ class Event extends Model
 
     public function getRecurringDescription()
     {
-
         $dowMap = ['Sundays', 'Mondays', 'Tuedays', 'Wednesdays', 'Thursdays', 'Fridays', 'Saturdays'];
         $daysText = [];
-        foreach ($this->days as $day) {
-            $daysText[] = $dowMap[$day];
+        if ($this->days) {
+            foreach ($this->days as $day) {
+                $daysText[] = @$dowMap[$day];
+            }
         }
         $days = implode(',', $daysText);
 
         $start = Carbon::create($this->start);
 
         $end = Carbon::create($this->end);
-        $time = $start->hour . ' until ' . $end->hour;
+        $time = $start->hour.' until '.$end->hour;
 
-        return $days . ' at  ' . $time;
+        return $days.' at  '.$time;
     }
 }

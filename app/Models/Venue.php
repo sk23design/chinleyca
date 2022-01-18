@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Laravel\Scout\Searchable;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Venue extends Model
 {
@@ -23,6 +23,7 @@ class Venue extends Model
     {
         return Str::of($this->intro)->limit(120);
     }
+
     /**
      * Get the indexable data array for the model.
      *
@@ -35,5 +36,10 @@ class Venue extends Model
         // Customize the data array...
 
         return $array;
+    }
+
+    public function rooms()
+    {
+        return $this->hasMany(\App\Models\Room::class);
     }
 }
