@@ -3,11 +3,15 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Panel;
 
 class Venue extends Resource
 {
@@ -50,9 +54,33 @@ class Venue extends Resource
             Slug::make('Slug')->from('name')->hideFromIndex(),
             //Text::make('Intro')->hideFromIndex(),
             Text::make('Website')->hideFromIndex(),
-
+            Boolean::make('Use External Website')->help('Bookings should be made directly with the venue'),
             HasMany::make('Events'),
-            HasMany::make('Rooms'),
+           //HasMany::make('Rooms'),
+           new Panel('Address Details', $this->addressPanel()),
+           new Panel('Occupancy Details', $this->occupancyPanel()),
+        ];
+    }
+
+    public function occupancyPanel()
+    {
+        return [
+            Text::make('Address1')->hideFromIndex(),
+            Text::make('Address2')->hideFromIndex(),
+            Text::make('Town')->hideFromIndex(),
+            Text::make('County')->hideFromIndex(),
+            Text::make('Postcode')->hideFromIndex(),
+            Text::make('Long')->hideFromIndex(),
+            Text::make('Lat')->hideFromIndex(),
+        ];
+    }
+
+    public function addressPanel()
+    {
+        return [
+            Number::make('Capacity')->hideFromIndex(),
+            Currency::make('Price')->hideFromIndex()->help('Price per hour')->symbol('£'),
+            Number::make('Minimum Booking')->hideFromIndex()->help('Minimum Booking Period'),
         ];
     }
 

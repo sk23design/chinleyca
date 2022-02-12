@@ -82,7 +82,7 @@
 
 
     {{-- Quick Links --}}
-
+    {{--
     <div class="py-12">
 
         <div class="max-w-7xl mx-auto p-8">
@@ -107,7 +107,7 @@
             </div>
         </div>
 
-    </div>
+    </div> --}}
 
     @if ($events ?? '')
     <div class="bg-gray-100 py-12">
@@ -116,24 +116,6 @@
     </div>
     @endif
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto p-8 text-center">
-            <h3 class="text-3xl text-pink-600 text-center">Everyone at Chinley Community Association is committed to
-                ensuring the
-                safety and well-being of all the children in
-                our
-                care.</h3>
-            <h3 class="mt-4">We take safeguarding very seriously. If you are worried about a child, don’t wait.
-                Contact Mr.
-                Lambert or Mrs.
-                Glover in confidence, who are the designated lead teachers for safeguarding in school.</h3>
-            <p class="mt-4">
-                Further information about our policies and procedures with regards to safeguarding can be found in the
-                <a class="text-pink-600 font-bold underline" href="{{ url('information') }}">Information</a>
-                section under safeguarding.
-            </p>
-
-        </div>
-    </div>
+    @include('includes.blurb')
 </main>
 @endsection

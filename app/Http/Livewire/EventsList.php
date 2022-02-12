@@ -22,6 +22,11 @@ class EventsList extends Component
         return view('livewire.events-list');
     }
 
+    public function updatedCurrentCategory($id)
+    {
+        $this->setCurrentCategory($id);
+    }
+
     public function setCurrentCategory($id)
     {
         $this->current_category = $id;

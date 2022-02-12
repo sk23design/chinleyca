@@ -25,6 +25,16 @@ class Event extends Model
         return $this->belongsTo(\App\Models\Venue::class, 'venue_id', 'id');
     }
 
+    public function related()
+    {
+        return Event::whereJsonContains('categories', $this->categories)->where('id', '<>', $this->id)->get();
+    }
+
+    public function categories()
+    {
+        return Category::where('id')->get();
+    }
+
     /**
      * Get the indexable data array for the model.
      *

@@ -1,18 +1,27 @@
 <section>
-    <div class="flex gap-4">
+    <div class="hidden md:flex gap-4">
         @foreach ($categories as $category)
         <button wire:click="setCurrentCategory({{$category->id}})"
-            class="rounded-lg p-2 px-4  font-bold @if($category->id== $current_category) bg-pink-600 text-white hover:text-white hover:bg-pink-600 @else bg-white text-pink-600 hover:text-white hover:bg-pink-600 @endif">
+            class="rounded-lg p-2 px-4 border-2 border-pink-500  font-bold @if($category->id== $current_category) bg-pink-600 text-white hover:text-white hover:bg-pink-600 @else bg-white text-pink-600 hover:text-white hover:bg-pink-600 @endif">
             {{$category->name}}
         </button>
 
         @endforeach
         <button wire:click="resetCurrentCategory()"
-            class="rounded-lg p-2 px-4 bg-white font-bold text-pink-600 hover:text-white hover:bg-pink-600">
+            class="border-2 border-pink-500 rounded-lg p-2 px-4 bg-white font-bold text-pink-600 hover:text-white hover:bg-pink-600">
             All
         </button>
 
+
+
+
     </div>
+
+    <select class="md:hidden p-4 border-2 border-pink-500 rounded-lg w-full" wire:model="current_category" id="">
+        @foreach ($categories as $category)
+        <option value="{{$category->id}}"> {{$category->name}}</option>
+        @endforeach
+    </select>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
         @foreach ($events as $event)
         <x-event-card :event="$event"></x-event-card>
