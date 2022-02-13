@@ -14,11 +14,11 @@
             <div class="mx-auto max-w-md sm:max-w-3xl lg:max-w-none lg:w-1/2 lg:mx-0">
                 <div class="w-32 mx-auto md:mx-0"> @include('assets.logo')</div>
                 <h1
-                    class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
+                    class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
                     Chinley, Buxworth & Brownside
                     <span class="block text-pink-600">Community Association</span>
                 </h1>
-                <p class="mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
+                <p class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
                     The Chinley, Buxworth & Brownside Community Association is an organisation set up to deliver a range
                     of community and leisure improvements in the Parish. It came about through the Parish Plan
                     consultation in 2005 and has been set up to make the Parish a better place to live, work and spend

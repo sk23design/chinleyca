@@ -6,29 +6,29 @@
             type="text" name="search" placeholder="search" @click.away="search = false" />
 
         @if (count($results))
-            <div class="bg-gray-100 relative top-12 rounded-xl overflow-hidden">
-                @foreach ($results as $type => $items)
+        <div class="bg-gray-100 relative top-12 rounded-xl overflow-hidden">
+            @foreach ($results as $type => $items)
 
 
 
-                    @foreach ($items as $item)
+            @foreach ($items as $item)
 
-                        <div>
+            <div>
 
-                            <a class="flex items-center justify-between p-4 hover:bg-gray-200"
-                                href="/{{ $type }}/{{ $item['slug'] }}">
-
-
-                                <span>{{ $item['name'] ?? $item['title'] }}</span>
-                                <span class="tag-{{ $type }}">{{ $type }}</span>
-                            </a>
-
-                        </div>
-                    @endforeach
+                <a class="flex items-center justify-between p-4 hover:bg-gray-200"
+                    href="/{{ $type }}/{{ $item['slug'] }}">
 
 
-                @endforeach
+                    <span>{{ $item['name'] ?? $item['title'] }}</span>
+                    <span class="tag-{{ $type }}">{{ $type }}</span>
+                </a>
+
             </div>
+            @endforeach
+
+
+            @endforeach
+        </div>
         @endif
         <button @click="search = false" class="top-11 right-12 absolute text-gray-800">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"

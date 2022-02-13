@@ -57,8 +57,9 @@ class Venue extends Resource
             Boolean::make('Use External Website')->help('Bookings should be made directly with the venue'),
             HasMany::make('Events'),
            //HasMany::make('Rooms'),
-           new Panel('Address Details', $this->addressPanel()),
-           new Panel('Occupancy Details', $this->occupancyPanel()),
+           new Panel('Contact Details', $this->contactPanel()),
+           new Panel('Occupancy Details', $this->addressPanel()),
+           new Panel('Address Details', $this->occupancyPanel()),
         ];
     }
 
@@ -70,8 +71,8 @@ class Venue extends Resource
             Text::make('Town')->hideFromIndex(),
             Text::make('County')->hideFromIndex(),
             Text::make('Postcode')->hideFromIndex(),
-            Text::make('Long')->hideFromIndex(),
-            Text::make('Lat')->hideFromIndex(),
+            // Text::make('Lat')->hideFromIndex(),
+            // Text::make('Long')->hideFromIndex(),
         ];
     }
 
@@ -81,6 +82,15 @@ class Venue extends Resource
             Number::make('Capacity')->hideFromIndex(),
             Currency::make('Price')->hideFromIndex()->help('Price per hour')->symbol('£'),
             Number::make('Minimum Booking')->hideFromIndex()->help('Minimum Booking Period'),
+        ];
+    }
+
+    public function contactPanel()
+    {
+        return [
+            Text::make('Contact Name')->hideFromIndex(),
+            Text::make('Email')->hideFromIndex(),
+            Text::make('Phone')->hideFromIndex(),
         ];
     }
 

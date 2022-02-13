@@ -8,7 +8,7 @@
 
 @section('content')
 <main>
-    <header class="relative bg-cool-gray-100 lg:bg-gray-50">
+    <header class="relative bg-gray-100">
         <div class="relative pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 mx-auto lg:max-w-7xl">
             <div class="mx-auto max-w-md sm:max-w-3xl lg:max-w-none lg:w-1/2 lg:mx-0">
 
@@ -35,9 +35,20 @@
                         </svg></a>
                     @else
                     <span class="rounded-md shadow">
+                        <a href="#info"
+                            class="inline-flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:border-teal-600 focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Info
+                        </a>
+                    </span>
+                    <span class="rounded-md shadow">
                         <a href="#book"
                             class="inline-flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:border-teal-600 focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Book
-                            {{ $venue->name }}</a>
+                        </a>
+                    </span>
+
+                    <span class="rounded-md shadow">
+                        <a href="#events"
+                            class="inline-flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:border-teal-600 focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Events
+                        </a>
                     </span>
                     @endif
 
@@ -62,12 +73,12 @@
         </svg>
 
 
-        <svg class="hidden lg:block absolute right-1/2 inset-y-0 h-full w-48 text-gray-50 transform translate-x-1/2 "
+        <svg class="hidden lg:block absolute right-1/2 inset-y-0 h-full w-48 text-gray-100 transform translate-x-1/2 "
             fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
             <path d="M50 0h50L50 100H0z"></path>
         </svg>
     </header>
-    <div class="bg-gray-50 pt-12 sm:pt-16">
+    <div class="bg-gray-50 pt-12 sm:pt-16" id="info">
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="text-3xl leading-9 font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
@@ -78,7 +89,7 @@
                 </p>
             </div>
         </div>
-        <div class="mt-10 bg-white">
+        <div class="py-12">
             <div class="relative">
 
                 <div class="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -141,8 +152,10 @@
                 </div>
             </div>
         </div>
+        @if ($venue->maplink()=='bob')
 
-        <div class="mt-10 bg-white">
+
+        <div class="py-12 bg-white">
             <div class="relative">
 
                 <div class="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -156,8 +169,8 @@
             </div>
         </div>
     </div>
-
-    <div class="text-white bg-gray-100 mt-12">
+    @endif
+    <div id="events" class="text-gray-50 bg-gray-100">
         @include('assets.wave')
     </div>
     <div>
@@ -197,21 +210,22 @@
     <div class="text-gray-100 bg-blue-500">
         @include('assets.wave')
     </div>
-    <div class="py-12 bg-blue-500">
+    <div class="py-12 bg-blue-500 ">
 
         <div class="relative max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:pl-12 lg:pr-8 lg:py-16">
-            <div class="md:ml-auto md:w-1/2 md:pl-10">
+            <div class="md:ml-auto md:w-1/2 md:pl-10 mx-auto
+            ">
                 <div class="text-base leading-6 font-semibold uppercase tracking-wider text-gray-300">
                     Looking to book {{ $venue->name }}?
                 </div>
-                <h2 class="mt-2 text-white text-3xl leading-9 font-extrabold sm:text-4xl sm:leading-10">
+                <h2 id="book" class="mt-2 text-white text-3xl leading-9 font-extrabold sm:text-4xl sm:leading-10">
                     Book Here
                 </h2>
                 <p class="mt-3 text-lg leading-7 text-gray-300">
                     {{ $venue->name }} is available for public bookings , e.g Childrens parties.
                 </p>
 
-                <form action="" method="POST" class="mt-8 max-w-sm">
+                <form action="" method="POST" class="mt-8">
 
                     <div>
                         <label for="contactName" class="block text-sm font-medium leading-5 text-white">Your
@@ -250,7 +264,7 @@
                     <div class="mt-8">
                         <span class="inline-flex rounded-md shadow">
                             <button type="submit"
-                                class="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-gray-900 bg-white hover:text-pink-600 focus:outline-none focus:text-pink-600 focus:shadow-outline transition duration-150 ease-in-out px-5 py-3">
+                                class="w-full flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-gray-900 bg-white hover:text-pink-600 focus:outline-none focus:text-pink-600 focus:shadow-outline transition duration-150 ease-in-out px-5 py-3">
                                 Request A Booking
                             </button>
                         </span>

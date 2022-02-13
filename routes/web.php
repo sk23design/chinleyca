@@ -1,10 +1,10 @@
 <?php
 
 use App\Models\Event;
+use App\Models\Information;
 use App\Models\Venue;
-use Illuminate\Support\Facades\Route;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ Route::get('/event/{event:slug}', function (Event $event) {
 });
 
 Route::get('/search', function (Request $request) {
-    $venues =  Venue::search($request->search)->get()->toArray();
+    $venues = Venue::search($request->search)->get()->toArray();
     $events = Event::search($request->search)->get()->toArray();
 
     $results = [];
@@ -49,4 +49,12 @@ Route::get('/search', function (Request $request) {
     $results['events'] = $events;
 
     return $results;
+});
+
+Route::get('/information', function () {
+    return view('informations', ['informations' => Information::where('enabled', 1)->get()]);
+});
+
+Route::get('/information/{information:slug}', function (Information $information) {
+    return view('information', ['information' => $information]);
 });

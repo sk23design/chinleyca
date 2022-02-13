@@ -26,18 +26,9 @@ class Venue extends Model
 
     public function mapLink()
     {
-        $link = 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2285.434890308066!2d-1.9179807253787642!3d53.3345285721363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1644685841620!5m2!1sen!2suk';
+        $link = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDhnuVrZHNma_FmfUeq3Z7pQ4hAbEW_fuI&q='.$this->postcode.'&center='.$this->lat.','.$this->long;
 
-//         let coordinateString = '';
-        // for (const item of coords) {
-//     coordinateString += '!4m3!3m2!1d' + item.lat + '!2d' + item.lon;
-        // }
-        // const epochNow = Date.now();
-        // let urlConstruct = `https://www.google.com/maps/embed?pb=!1m${coords.length * 4 + 16}`;
-        // urlConstruct += `!1m12!1m3!1d1.0!2d${coords[0].$.lon}!3d${coords[0].$.lon}`;
-        // urlConstruct += `!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1`;
-        // urlConstruct += `!4m${coords.length * 4 + 1}!3e0${coordinateString}`;
-        // urlConstruct += `!5e0!3m2!1sen!2sau!4v${epochNow}000!5m2!1sen!2sau`;
+        //https://www.google.com/maps/place/Chinley+Community+Centre/@53.3388113,-1.9427515,18.8z/data=!4m5!3m4!1s0x487a3483bdc3b89b:0x5acd47ee7f41a9b0!8m2!3d53.3388719!4d-1.9429073
 
         return $link;
     }
