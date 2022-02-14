@@ -20,7 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view(
         'welcome',
-        ['venues' => \App\Models\Venue::all(), 'events' => \App\Models\Event::all()]
+        [
+        'venues' => \App\Models\Venue::all(),
+        'events' => \App\Models\Event::all(),
+        'villages' => \App\Models\Village::all(),
+        ]
     );
 });
 
@@ -37,6 +41,14 @@ Route::get('/events', function () {
 });
 
 Route::get('/event/{event:slug}', function (Event $event) {
+    return view('event', ['event' => $event]);
+});
+
+Route::get('/activities', function () {
+    return view('events', ['events' => Event::all()]);
+});
+
+Route::get('/activity/{event:slug}', function (Event $event) {
     return view('event', ['event' => $event]);
 });
 
@@ -57,4 +69,8 @@ Route::get('/information', function () {
 
 Route::get('/information/{information:slug}', function (Information $information) {
     return view('information', ['information' => $information]);
+});
+
+Route::get('/about-us', function () {
+    return view('about-us');
 });

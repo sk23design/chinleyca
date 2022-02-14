@@ -40,8 +40,8 @@
                         </a>
                     </span>
                     <span class="rounded-md shadow">
-                        <a href="#book"
-                            class="inline-flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:border-teal-600 focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Book
+                        <a href="#enquire"
+                            class="inline-flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:border-teal-600 focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Enquire
                         </a>
                     </span>
 
@@ -218,8 +218,8 @@
                 <div class="text-base leading-6 font-semibold uppercase tracking-wider text-gray-300">
                     Looking to book {{ $venue->name }}?
                 </div>
-                <h2 id="book" class="mt-2 text-white text-3xl leading-9 font-extrabold sm:text-4xl sm:leading-10">
-                    Book Here
+                <h2 id="enquire" class="mt-2 text-white text-3xl leading-9 font-extrabold sm:text-4xl sm:leading-10">
+                    Enquire Here
                 </h2>
                 <p class="mt-3 text-lg leading-7 text-gray-300">
                     {{ $venue->name }} is available for public bookings , e.g Childrens parties.
@@ -265,7 +265,7 @@
                         <span class="inline-flex rounded-md shadow">
                             <button type="submit"
                                 class="w-full flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-gray-900 bg-white hover:text-pink-600 focus:outline-none focus:text-pink-600 focus:shadow-outline transition duration-150 ease-in-out px-5 py-3">
-                                Request A Booking
+                                Send your request
                             </button>
                         </span>
                     </div>

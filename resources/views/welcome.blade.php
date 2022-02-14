@@ -19,10 +19,11 @@
                     <span class="block text-pink-600">Community Association</span>
                 </h1>
                 <p class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
-                    The Chinley, Buxworth & Brownside Community Association is an organisation set up to deliver a range
-                    of community and leisure improvements in the Parish. It came about through the Parish Plan
-                    consultation in 2005 and has been set up to make the Parish a better place to live, work and spend
-                    your spare time.
+                    Chinley Buxworth and Brownside Community Association are a charity supporting community activity in
+                    the Parish.
+                    We were established in 2006 following the first Parish Plan, and have been growing and developing
+                    ever since.
+
                 </p>
 
                 <div class="flex justify-center sm:justify-start">
@@ -77,42 +78,37 @@
         <div class="max-w-7xl mx-auto px-8 mt-8">
             <div class="grid  md:grid-cols-3 gap-8">
 
-                @for ($i = 0; $i < 3; $i++) <div
-                    class="text-center bg-pink-{{ $i + 5 . '00' }} text-white overflow-hidden rounded-xl shadow-lg">
-                    <a href="#" class="">
-                        <div class="w-full mx-auto">
-                            <img src="{{ asset('storage/images/slider/slider1.jpg') }}"
-                                class="h-72 object-cover overflow-hidden" alt="Venue" aria-hidden="true">
-                        </div>
-                        <div class="p-8">
-                            <h3>
-                                Im Visiting
-                            </h3>
-                            <p class="mt-4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus labore rem vel
-                                ut
-                                beatae
-                                explicabo dolore, tempora laudantium, ipsa quas earum, eveniet iusto. Cum beatae quo
-                                perspiciatis
-                                omnis! Aut, laborum.
-                            </p>
-                            <button
-                                class="inline-flex align-middle items-center mt-4 font-bold bg-white text-pink-600 px-4 py-2 rounded-full">
-                                <span>Read more</span>
-                                <svg class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </a>
+                @foreach ($villages as $village) <div
+                    class="text-center bg-pink-{{ 5 +$loop->index . '00' }} text-white overflow-hidden rounded-xl shadow-lg">
+
+                    <div class="w-full mx-auto">
+                        <img src="{{ asset('storage') }}/{{$village->cover_image}}"
+                            class="h-72 object-cover overflow-hidden" alt="Venue" aria-hidden="true">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold">
+                            {{$village->name}}
+                        </h3>
+                        <p class="mt-4">
+                            {{$village->intro}}
+                        </p>
+                        {{-- <button
+                            class="inline-flex align-middle items-center mt-4 font-bold bg-white text-pink-600 px-4 py-2 rounded-full">
+                            <span>Read more</span>
+                            <svg class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button> --}}
+                    </div>
+
+                </div>
+
+                @endforeach
+
             </div>
-
-            @endfor
-
-        </div>
         </div>
     </section>
     <div class="bg-white text-gray-100 z-10">
@@ -125,7 +121,7 @@
 
             <h2
                 class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center">
-                Our
+                Local
                 <span class="block text-pink-600">Venues</span>
             </h2>
             <p class="mt-4 text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias eligendi

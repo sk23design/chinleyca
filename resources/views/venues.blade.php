@@ -12,22 +12,26 @@
         <div class="relative pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 mx-auto lg:max-w-7xl">
             <div class="mx-auto max-w-md sm:max-w-3xl lg:max-w-none lg:w-1/2 lg:mx-0">
                 <h1
-                    class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
+                    class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
                     Chinley, Buxworth & Brownside
                     <span class="block text-pink-600">Community Association </span>
                 </h1>
                 <p
-                    class="mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none text-center md:text-left">
-                    intro
+                    class="relative z-10  mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none text-center md:text-left">
+                    The Community Association manages Chinley, Buxworth and Brownside Community Centre on Lower Lane.
+
+                    We work with the other community organisations in the Parish to signpost to each other's facilities
+                    as there is usually a venue to meet the need. For details of the other community facilities for
+                    hire, see below.
                 </p>
 
-                <div class="flex justify-center sm:justify-start">
+                {{-- <div class="flex justify-center sm:justify-start">
                     <span class="rounded-md shadow">
                         <a href="#book"
                             class="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:border-teal-600 focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Book
                             Link</a>
                     </span>
-                </div>
+                </div> --}}
             </div>
         </div>
 
@@ -52,13 +56,12 @@
 
             <h2
                 class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center">
-                Our
+                Local
                 <span class="block text-pink-600">Venues</span>
             </h2>
-            <p class="mt-4 text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias eligendi
-                incidunt
-                quaerat,
-                veniam recusandae cupiditate. Nihil eligendi voluptatum voluptatibus mollitia.</p>
+            <p class="mt-4 text-center">We work with the other community organisations in the Parish to signpost to each
+                other's facilities as there is usually a venue to meet the need. For details of the other community
+                facilities for hire, see below.</p>
         </div>
 
         <div class="max-w-7xl mt-8 px-8 mx-auto">

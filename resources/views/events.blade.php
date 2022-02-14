@@ -13,22 +13,24 @@
     <div class="relative pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 mx-auto lg:max-w-7xl">
         <div class="mx-auto max-w-md sm:max-w-3xl lg:max-w-none lg:w-1/2 lg:mx-0">
             <h1
-                class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
+                class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
                 Chinley, Buxworth & Brownside
-                <span class="block text-pink-600">What's On</span>
+                <span class="block text-pink-600">Activities</span>
             </h1>
             <p
-                class="mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none text-center md:text-left">
-                intro
+                class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none text-center md:text-left">
+                There are a wide range of activities and groups for all ages, interests and abilities. We are always
+                keen to support the development of new activities too, so if you would like to start a new group please
+                Contact Us.
             </p>
 
-            {{-- <div class="flex justify-center sm:justify-start">
+            <div class="flex justify-center sm:justify-start">
                 <span class="rounded-md shadow">
-                    <a href="#book"
-                        class="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:border-teal-600 focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Book
-                        Link</a>
+                    <a href="/contact"
+                        class="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:border-teal-600 focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">
+                        Contact Us</a>
                 </span>
-            </div> --}}
+            </div>
         </div>
     </div>
 

@@ -29,16 +29,20 @@
                 <nav>
                     <ul class="flex items-center align-middle font-bold gap-1">
 
-                        <li><a class="{{ request()->is('venues') ? 'text-blue-500 ' : '' }} px-4 py-2 hover:text-blue-400 hover:bg-gray-100 rounded-full"
+                        <li><a class="{{ request()->is('venues') ? 'text-pink-500 ' : '' }} px-4 py-2 hover:text-pink-400 hover:bg-gray-100 rounded-full"
                                 href="/venues">Venues</a></li>
-                        <li><a class="{{ request()->is('events') ? 'text-blue-500 ' : '' }} px-4 py-2 hover:text-blue-400 hover:bg-gray-100 rounded-full"
-                                href="/events">Events</a></li>
+                        <li><a class="{{ request()->is('activities') ? 'text-pink-500 ' : '' }} px-4 py-2 hover:text-pink-400 hover:bg-gray-100 rounded-full"
+                                href="/activities">Activities</a></li>
 
-                        <li><a class="{{ request()->is('information') ? 'text-blue-500 ' : '' }} px-4 py-2 hover:text-blue-400 hover:bg-gray-100 rounded-full"
+                        <li><a class="{{ request()->is('information') ? 'text-pink-500 ' : '' }} px-4 py-2 hover:text-pink-400 hover:bg-gray-100 rounded-full"
                                 href="/information">Information</a></li>
 
-                        <li><a class="{{ request()->is('contact') ? 'text-blue-500 ' : '' }} px-4
-                            py-2 hover:text-blue-400 hover:bg-gray-100 rounded-full" href="/contact">Contact</a></li>
+
+                        <li><a class="{{ request()->is('about-us') ? 'text-pink-500 ' : '' }} px-4
+                            py-2 hover:text-pink-400 hover:bg-gray-100 rounded-full" href="/about-us">About Us</a></li>
+
+                        <li><a class="{{ request()->is('contact') ? 'text-pink-500 ' : '' }} px-4
+                            py-2 hover:text-pink-400 hover:bg-gray-100 rounded-full" href="/contact">Contact</a></li>
                         <li class=" px-4 py-2">
                             <button @click="search = ! search">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"

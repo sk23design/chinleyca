@@ -12,6 +12,7 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Panel;
+use Manogi\Tiptap\Tiptap;
 
 class Venue extends Resource
 {
@@ -52,7 +53,8 @@ class Venue extends Resource
             Text::make('Name'),
             Text::make(__('Town / Village'), 'town')->hideFromIndex(),
             Slug::make('Slug')->from('name')->hideFromIndex(),
-            //Text::make('Intro')->hideFromIndex(),
+            Text::make('Intro')->hideFromIndex(),
+            Tiptap::make('Description'),
             Text::make('Website')->hideFromIndex(),
             Boolean::make('Use External Website')->help('Bookings should be made directly with the venue'),
             HasMany::make('Events'),

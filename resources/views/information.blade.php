@@ -43,18 +43,6 @@
 </header>
 <section class="bg-gray-100 py-12">
 
-  <div class="max-w-5xl mx-auto py-8 px-8 bg-white rounded-xl shadow-xl">
-    <div class="content text-left">
-      {!!$information->description!!}
-    </div>
-
-
-
-  </div>
-
-</section>
-<section class="bg-gray-100">
-
   <div class="max-w-5xl mx-auto py-8 px-8 bg-white rounded-xl  shadow-xl">
     <h2
       class="my-8 text-pink-400 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
@@ -76,6 +64,19 @@
     @endif
 
   </div>
+</section>
+
+<section class="bg-gray-100 pb-12">
+
+  <div class="max-w-5xl mx-auto py-8 px-8 bg-white rounded-xl shadow-xl">
+    <div class="content text-left">
+      {!!$information->description!!}
+    </div>
+
+
+
+  </div>
+
 </section>
 
 @include('includes.blurb')

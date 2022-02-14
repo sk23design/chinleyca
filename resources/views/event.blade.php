@@ -36,7 +36,7 @@
         </div>
 
         <div
-            class="relative  -mt-15 sm:mt-4 w-full sm:h-72 md:h-96 lg:h-full lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-white">
+            class="relative  -mt-15  w-full sm:h-72 md:h-96 lg:h-full lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-white">
             <picture>
                 <img @if ($event->thumbnail)
                 src="{{asset($event->thumbnail)}}"
