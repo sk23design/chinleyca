@@ -1,6 +1,6 @@
 <div class="bg-gray-100 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
     <a href="/venue/{{ $venue->slug }}">
-        <img class="h-64 object-cover w-full" src="{{ asset($venue->cover_image) }}" alt="" srcset="">
+        <img class="h-64 object-cover w-full" src="{{ asset('storage') }}/{{$venue->cover_image}}" alt="" srcset="">
 
         <div class="p-5">
 

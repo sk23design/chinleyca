@@ -1,7 +1,7 @@
 <div class="bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
     <a href="/event/{{ $event->slug }}">
         <img class="h-64 object-cover w-full bg-gray-200"
-            src="{{ $event->thumbnail ? asset($event->thumbnail) : asset($event->venue->cover_image) }}" alt=""
+            src="{{asset('storage')}}/{{ $event->thumbnail ? $event->thumbnail : $event->venue->cover_image }}" alt=""
             srcset="">
 
         <div class="p-5">
