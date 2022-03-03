@@ -36,15 +36,11 @@
         </div>
 
         <div
-            class="relative  -mt-15  w-full sm:h-72 md:h-96 lg:h-full lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-white">
+            class="relative mt-10 md:mt-0  w-full sm:h-72 md:h-96 lg:h-full lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-white">
             <picture>
-                <img @if ($event->thumbnail)
-                src="{{asset($event->thumbnail)}}"
-                @else
-                src="{{asset($event->venue->cover_image)}}"
-                @endif
-                class="sm:absolute sm:inset-0 sm:w-full sm:h-full sm:object-cover" alt="{{ $event->name }}"
-                aria-hidden="true">
+                <img src="{{asset('storage')}}/{{ $event->thumbnail ? $event->thumbnail : $event->venue->cover_image }}"
+                    class="sm:absolute sm:inset-0 sm:w-full sm:h-full sm:object-cover" alt="{{ $event->name }}"
+                    aria-hidden="true">
             </picture>
         </div>
 
@@ -154,18 +150,16 @@
     <div class="py-12 bg-blue-500">
 
         <div class="relative max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:pl-12 lg:pr-8 lg:py-16">
-            <div class="md:ml-auto md:w-1/2 md:pl-10">
+            <div class="md:ml-auto md:w-1/2 md:pl-10 mx-auto">
                 <div class="text-base leading-6 font-semibold uppercase tracking-wider text-gray-300">
                     Looking to book {{ $event->name }}?
                 </div>
                 <h2 class="mt-2 text-white text-3xl leading-9 font-extrabold sm:text-4xl sm:leading-10">
                     Book Here
                 </h2>
-                <p class="mt-3 text-lg leading-7 text-gray-300">
-                    {{ $event->name }} is available for public bookings , e.g Childrens parties.
-                </p>
 
-                <form action="" method="POST" class="mt-8 max-w-sm">
+
+                <form action="" method="POST" class="mt-8">
 
                     <div>
                         <label for="contactName" class="block text-sm font-medium leading-5 text-white">Your
@@ -173,7 +167,7 @@
                         <div class="mt-1 rounded-md shadow-sm">
                             <input id="contact-fullName" name="fullName" autocomplete="name" autocapitalize="words"
                                 type="text" maxlength="70" required=""
-                                class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                                class="appearance-none block w-full px-4 py-4 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                         </div>
                     </div>
 
@@ -183,7 +177,7 @@
                         <div class="mt-1 rounded-md shadow-sm">
                             <input id="contact-email" name="email" autocomplete="email" type="email" maxlength="254"
                                 required=""
-                                class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                                class="appearance-none block w-full px-4 py-4 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                         </div>
                     </div>
 
@@ -191,20 +185,20 @@
                         <div class="flex justify-between">
                             <label for="contact-phone" class="block text-sm font-medium leading-5 text-white">Phone
                                 number</label>
-                            <span class="text-xs leading-5 text-gray-300" id="contact-phone-optional">Optional</span>
+
                         </div>
                         <div class="mt-1 rounded-md shadow-sm">
                             <input id="contact-phone" name="phone" autocomplete="tel" type="tel"
                                 aria-describedby="contact-phone-optional"
-                                class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                                class="appearance-none block w-full px-4 py-4 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                         </div>
                     </div>
 
 
                     <div class="mt-8">
-                        <span class="inline-flex rounded-md shadow">
+                        <span class="rounded-md shadow">
                             <button type="submit"
-                                class="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-gray-900 bg-white hover:text-pink-600 focus:outline-none focus:text-pink-600 focus:shadow-outline transition duration-150 ease-in-out px-5 py-3">
+                                class="w-full border border-transparent text-base leading-6 font-medium rounded-md text-white bg-pink-600 hover:text-pink-100 focus:outline-none focus:text-pink-600 focus:shadow-outline transition duration-150 ease-in-out px-5 py-3">
                                 Request A Booking
                             </button>
                         </span>

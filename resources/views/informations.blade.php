@@ -23,7 +23,7 @@ Please choose a section below to view related documents.">
 
       <div class="flex justify-center sm:justify-start">
         <span class="rounded-md shadow">
-          <a href="#book"
+          <a href="#section"
             class="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-800 focus:outline-none  focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Read
             More..</a>
         </span>
@@ -52,7 +52,7 @@ Please choose a section below to view related documents.">
   </svg>
 </header>
 
-<div>
+<section id="section">
 
   <div class="bg-gray-100">
 
@@ -80,6 +80,6 @@ Please choose a section below to view related documents.">
 
   </div>
 
-</div>
+</section>
 @include('includes.blurb')
 @endsection
