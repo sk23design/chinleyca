@@ -59,7 +59,8 @@
         <div
             class="relative  -mt-15 sm:mt-0 w-full sm:h-72 md:h-96 lg:h-full lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
             <picture>
-                <img src="{{ asset($venue->cover_image) }}"
+
+                <img src="{{ asset('storage') }}/{{$venue->cover_image}}"
                     class="sm:absolute sm:inset-0 sm:w-full sm:h-full sm:object-cover" alt="{{ $venue->name }}"
                     aria-hidden="true">
             </picture>
