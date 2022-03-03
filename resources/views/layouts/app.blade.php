@@ -30,9 +30,9 @@
                     <ul class="flex items-center align-middle font-bold gap-1">
 
                         <li><a class="{{ request()->is('venues') ? 'text-pink-500 ' : '' }} px-4 py-2 hover:text-pink-400 hover:bg-gray-100 rounded-full"
-                                href="/venues">Venues</a></li>
+                                href="/venues">Venues For Hire</a></li>
                         <li><a class="{{ request()->is('activities') ? 'text-pink-500 ' : '' }} px-4 py-2 hover:text-pink-400 hover:bg-gray-100 rounded-full"
-                                href="/activities">Activities</a></li>
+                                href="/activities">Activities, Groups and Events</a></li>
 
                         <li><a class="{{ request()->is('information') ? 'text-pink-500 ' : '' }} px-4 py-2 hover:text-pink-400 hover:bg-gray-100 rounded-full"
                                 href="/information">Information</a></li>

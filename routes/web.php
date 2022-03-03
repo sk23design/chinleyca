@@ -72,5 +72,9 @@ Route::get('/information/{information:slug}', function (Information $information
 });
 
 Route::get('/about-us', function () {
-    return view('about-us');
+    return view('about');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
 });

@@ -10,52 +10,59 @@
 
 <main>
     <header class="relative bg-gray-100 lg:bg-gray-50">
-        <div class="relative pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 mx-auto lg:max-w-7xl">
-            <div class="mx-auto max-w-md sm:max-w-3xl lg:max-w-none lg:w-1/2 lg:mx-0">
-                <div class="w-32 mx-auto md:mx-0"> @include('assets.logo')</div>
-                <h1
-                    class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
-                    Chinley, Buxworth & Brownside
-                    <span class="block text-pink-600">Community Association</span>
-                </h1>
-                <p class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
-                    Chinley Buxworth and Brownside Community Association are a charity supporting community activity in
-                    the Parish.
-                    We were established in 2006 following the first Parish Plan, and have been growing and developing
-                    ever since.
 
-                </p>
+        <div class="swiper homeslider">
+            <div class="swiper-wrapper">
 
-                <div class="flex justify-center sm:justify-start">
-                    <span class="rounded-md shadow">
-                        <a href="#book"
-                            class="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-800 focus:outline-none  focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Book
-                            button</a>
-                    </span>
-                </div>
+                @for ($i = 1; $i < 6; $i++) <div class="swiper-slide">
+
+                    <div class="relative pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 mx-auto lg:max-w-7xl">
+                        <div class="mx-auto max-w-md sm:max-w-3xl lg:max-w-none lg:w-1/2 lg:mx-0">
+                            <div class="w-32 mx-auto md:mx-0"> @include('assets.logo')</div>
+                            <h1
+                                class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
+                                Chinley, Buxworth & Brownside
+                                <span class="block text-pink-600">Community Association</span>
+                            </h1>
+                            <p
+                                class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
+                                Chinley Buxworth and Brownside Community Association are a charity supporting community
+                                activity in
+                                the Parish.
+                                We were established in 2006 following the first Parish Plan, and have been growing
+                                and developing
+                                ever since.
+
+                            </p>
+
+
+                        </div>
+                    </div>
+
+                    <div
+                        class="relative -mt-15 sm:mt-0 w-full sm:h-72 md:h-96 lg:h-full lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+                        <picture>
+                            <img src="{{ asset('storage/images/slider/slider'.$i.'.jpg') }}"
+                                class="sm:absolute sm:inset-0 sm:w-full sm:h-full sm:object-cover" alt="Venue"
+                                aria-hidden="true">
+                        </picture>
+                    </div>
+
+
+
+
+
+                    <svg class="hidden lg:block absolute right-1/2 inset-y-0 h-full w-48 text-gray-50 transform translate-x-1/2"
+                        fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path d="M50 0h50L50 100H0z"></path>
+                    </svg>
+
             </div>
+
+
+            @endfor
         </div>
-
-        <div
-            class="relative -mt-15 sm:mt-0 w-full sm:h-72 md:h-96 lg:h-full lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-            <picture>
-                <img src="{{ asset('storage/images/slider/slider1.jpg') }}"
-                    class="sm:absolute sm:inset-0 sm:w-full sm:h-full sm:object-cover" alt="Venue" aria-hidden="true">
-            </picture>
         </div>
-
-
-        <svg class="block lg:hidden absolute top-0 left-0 w-full text-gray-50" viewBox="0 0 411 201">
-            <path
-                d="M0 0C80.0392 0 322.5 0 322.5 0C322.5 0 330.534 0 411 0C411 0 411 5.1327 411 25.5C411 39 343.5 38 276.5 105.5C209.5 173 146 105.5 86.5 140.5C27 175.5 0 201 0 201V0Z"
-                fill="currentColor"></path>
-        </svg>
-
-
-        <svg class="hidden lg:block absolute right-1/2 inset-y-0 h-full w-48 text-gray-50 transform translate-x-1/2"
-            fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path d="M50 0h50L50 100H0z"></path>
-        </svg>
     </header>
 
 
@@ -195,5 +202,16 @@
 
     @include('includes.blurb')
 </main>
-
+<script>
+    var swiper = new Swiper(".homeslider", {
+        spaceBetween: 0,
+     
+        centeredSlides: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+      
+      });
+</script>
 @endsection

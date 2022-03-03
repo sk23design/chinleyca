@@ -5,9 +5,9 @@
         <nav>
             <ul class=" text-2xl font-bold p-10 text-center">
                 <li><a class="text-white {{ request()->is('venues') ? 'text-white ' : '' }} p-4 block  rounded-full"
-                        href="/venues">Venues</a></li>
+                        href="/venues">Venues For Hire</a></li>
                 <li><a class="text-white {{ request()->is('events') ? 'text-white ' : '' }} p-4 block  rounded-full"
-                        href="/events">Events</a></li>
+                        href="/events">Activities, Groups and Events</a></li>
 
                 <li><a class="text-white {{ request()->is('information') ? 'text-white ' : '' }} p-4 block  rounded-full"
                         href="/information">Information</a></li>

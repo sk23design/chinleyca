@@ -6,7 +6,7 @@
         <h2
             class="my-8 text-blue-100 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
             About
-            <span class="block text-blue-200">Chinley, Buxworth & Brownside</span>
+            <span class="block text-blue-200">Chinley, Buxworth and Brownside Community Association</span>
         </h2>
         <p class="mt-4 text-gray-100">
             The Chinley, Buxworth & Brownside Community Association is an organisation set up to deliver a range of
