@@ -233,7 +233,7 @@
                         <div class="mt-1 rounded-md shadow-sm">
                             <input id="contact-fullName" name="fullName" autocomplete="name" autocapitalize="words"
                                 type="text" maxlength="70" required=""
-                                class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                                class="appearance-none block w-full px-4 py-4 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                         </div>
                     </div>
 
@@ -243,7 +243,7 @@
                         <div class="mt-1 rounded-md shadow-sm">
                             <input id="contact-email" name="email" autocomplete="email" type="email" maxlength="254"
                                 required=""
-                                class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                                class="appearance-none block w-full px-4 py-4 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                         </div>
                     </div>
 
@@ -251,20 +251,20 @@
                         <div class="flex justify-between">
                             <label for="contact-phone" class="block text-sm font-medium leading-5 text-white">Phone
                                 number</label>
-                            <span class="text-xs leading-5 text-gray-300" id="contact-phone-optional">Optional</span>
+
                         </div>
                         <div class="mt-1 rounded-md shadow-sm">
                             <input id="contact-phone" name="phone" autocomplete="tel" type="tel"
                                 aria-describedby="contact-phone-optional"
-                                class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                                class="appearance-none block w-full px-4 py-4 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                         </div>
                     </div>
 
 
                     <div class="mt-8">
-                        <span class="inline-flex rounded-md shadow">
+                        <span class="rounded-md shadow">
                             <button type="submit"
-                                class="w-full flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-gray-900 bg-white hover:text-pink-600 focus:outline-none focus:text-pink-600 focus:shadow-outline transition duration-150 ease-in-out px-5 py-3">
+                                class="w-full flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-pink-500 hover:text-pink-100 focus:outline-none focus:text-pink-600 focus:shadow-outline transition duration-150 ease-in-out px-5 py-3">
                                 Send your request
                             </button>
                         </span>

@@ -35,6 +35,12 @@
 
                             </p>
 
+                            <p
+                                class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
+                                Our volunteers work with other community organisations to provide and promote community
+                                activities, events and venues for all.
+                                For more information about the Community Association and how we operate, </p>
+
 
                         </div>
                     </div>
@@ -131,10 +137,8 @@
                 Local
                 <span class="block text-pink-600">Venues</span>
             </h2>
-            <p class="mt-4 text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias eligendi
-                incidunt
-                quaerat,
-                veniam recusandae cupiditate. Nihil eligendi voluptatum voluptatibus mollitia.</p>
+            <p class="mt-4 text-center">Our website provides information on activities groups and events, community
+                facilities and spaces and services provided by us and the many organisations across the parish.</p>
         </div>
 
         <div class="max-w-7xl mt-8 px-8 mx-auto">
