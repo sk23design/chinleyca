@@ -63,7 +63,7 @@ class Event extends Model
         $start = Carbon::create($this->start);
 
         $end = Carbon::create($this->end);
-        $time = $start->hour.' until '.$end->hour;
+        $time = $this->time_start.' until '.$this->time_end;
 
         return $days.' at  '.$time;
     }

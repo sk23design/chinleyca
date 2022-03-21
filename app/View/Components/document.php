@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class document extends Component
+class Document extends Component
 {
     public $document;
 

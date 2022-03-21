@@ -4,8 +4,10 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class mobile-menu extends Component
+class MobileMenu extends Component
 {
+    public $menu;
+
     /**
      * Create a new component instance.
      *
@@ -13,7 +15,7 @@ class mobile-menu extends Component
      */
     public function __construct()
     {
-        //
+        $this->menu = \App\Models\Page::where('enabled', 1)->get();
     }
 
     /**

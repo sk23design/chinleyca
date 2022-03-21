@@ -3,9 +3,10 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laraning\NovaTimeField\TimeField;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Select;
@@ -61,8 +62,10 @@ class Event extends Resource
             BelongsTo::make(__('Venue')),
             Select::make('type')->options(['Private Booking', 'Public Booking', 'Maintenance', 'Not Available', 'Other'])->hideFromIndex(),
             Tiptap::make('description'),
-            DateTime::make('start')->hideFromIndex(),
-            DateTime::make('end')->hideFromIndex(),
+            Date::make('start')->hideFromIndex(),
+            TimeField::make('time_start'),
+            Date::make('end')->hideFromIndex(),
+            TimeField::make('time_end'),
             Boolean::make('active')->default(true),
             Boolean::make('recurring'),
             Checkboxes::make('Categories')
