@@ -93,12 +93,12 @@ nav > ul {
 }
 
 .content table {
-    @apply mx-auto text-left border-2 border-gray-200;
+    @apply w-full table text-left table-fixed;
 }
 
 .content table td,
 .content table th {
-    @apply mx-auto text-left border-2 border-gray-200 p-2;
+    @apply text-left border-2 border-gray-200 p-2;
 }
 
 .information {
