@@ -15,7 +15,7 @@
             and has been set up to make the Parish a better place to live, work and spend your spare time.
         </p>
         <div class="mt-8">
-            <x-link link="/about-us" label="Read More" target="_self" />
+            <x-link link="/about" label="Read More" target="_self" />
         </div>
     </div>
 </div>

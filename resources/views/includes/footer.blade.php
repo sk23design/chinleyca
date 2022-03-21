@@ -3,7 +3,7 @@
         @include('assets.low-hills')
     </div>
     <div class="bg-green-500 -mt-1">
-        <div class="w-32 mx-auto">
+        <div class="w-32 md:w-64 mx-auto">
             @include('assets.logo-white')
         </div>
         <div>

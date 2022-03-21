@@ -29,20 +29,14 @@
                 <nav>
                     <ul class="flex items-center align-middle font-bold gap-1">
 
-                        <li><a class="{{ request()->is('venues') ? 'text-pink-500 ' : '' }} px-4 py-2 hover:text-pink-400 hover:bg-gray-100 rounded-full"
-                                href="/venues">Venues For Hire</a></li>
-                        <li><a class="{{ request()->is('activities') ? 'text-pink-500 ' : '' }} px-4 py-2 hover:text-pink-400 hover:bg-gray-100 rounded-full"
-                                href="/activities">Activities, Groups and Events</a></li>
 
-                        <li><a class="{{ request()->is('information') ? 'text-pink-500 ' : '' }} px-4 py-2 hover:text-pink-400 hover:bg-gray-100 rounded-full"
-                                href="/information">Information</a></li>
+                        @foreach (\App\Models\Page::where('enabled',1)->get() as $item)
+                        <li><a class="{{ request()->is($item->slug) ? 'text-pink-500 ' : '' }} px-4 py-2 hover:text-pink-400 hover:bg-gray-100 rounded-full"
+                                href="/{{$item->slug}}">{{$item->name}}</a></li>
+                        @endforeach
 
 
-                        <li><a class="{{ request()->is('about-us') ? 'text-pink-500 ' : '' }} px-4
-                            py-2 hover:text-pink-400 hover:bg-gray-100 rounded-full" href="/about-us">About Us</a></li>
 
-                        <li><a class="{{ request()->is('contact') ? 'text-pink-500 ' : '' }} px-4
-                            py-2 hover:text-pink-400 hover:bg-gray-100 rounded-full" href="/contact">Contact</a></li>
                         <li class=" px-4 py-2">
                             <button @click="search = ! search">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -95,8 +89,7 @@
 
 
     @include('includes.footer')
-
-    @include('components.mobile-menu')
+    <x-mobile-menu />
     @livewire('search')
     @livewireScripts
 </body>

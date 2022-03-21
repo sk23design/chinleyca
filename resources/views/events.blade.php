@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('head_scripts')
-<title>Home - {{ config('app.name') }}</title>
+<title>{{$page->meta_title ?? $page->name}} - {{ config('app.name') }}</title>
 <meta name="description" content="Chinley Community.">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -14,14 +14,12 @@
         <div class="mx-auto max-w-md sm:max-w-3xl lg:max-w-none lg:w-1/2 lg:mx-0">
             <h1
                 class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
-                Chinley, Buxworth & Brownside
-                <span class="block text-pink-600">Activities</span>
+                Chinley, Buxworth & Brownside Community Association
+                <span class="block text-pink-600">{{$page->name ?? "What's On"}}</span>
             </h1>
             <p
                 class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none text-center md:text-left">
-                There are a wide range of activities and groups for all ages, interests and abilities. We are always
-                keen to support the development of new activities too, so if you would like to start a new group please
-                Contact Us.
+                {{$page->intro}}
             </p>
 
             <div class="flex justify-center sm:justify-start">

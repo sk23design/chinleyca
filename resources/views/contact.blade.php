@@ -26,7 +26,7 @@
 
   <div class="relative -mt-15 sm:mt-0 w-full sm:h-72 md:h-96 lg:h-full lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
     <picture>
-      <img src="{{ asset('storage/images/slider/slider2.jpg') }}"
+      <img src="{{ asset('storage') }}/{{$page->cover_image}}"
         class="sm:absolute sm:inset-0 sm:w-full sm:h-full sm:object-cover" alt="Venue" aria-hidden="true">
     </picture>
   </div>
@@ -43,12 +43,12 @@
 
   <div class="max-w-7xl mx-auto py-8 px-8">
     <h2
-      class="my-8 text-pink-400 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
-      Content
-      <span class="block text-pink-500">To be added</span>
+      class="my-8 text-pink-500 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
+      {{$page->subtitle}}
+
     </h2>
 
-
+    <div>{!!$page->description!!}</div>
 
 
 

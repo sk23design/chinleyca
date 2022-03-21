@@ -4,6 +4,8 @@
 <meta name="description" content="Chinley Community.">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
 @endsection
 
 @section('content')
@@ -82,10 +84,7 @@
                 Discover
                 <span class="block text-pink-600">Chinley, Buxworth & Brownside</span>
             </h2>
-            <p class="mt-4 text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias eligendi
-                incidunt
-                quaerat,
-                veniam recusandae cupiditate. Nihil eligendi voluptatum voluptatibus mollitia.</p>
+            <p class="mt-4 text-center">{{$page->intro}}</p>
         </div>
 
         <div class="max-w-7xl mx-auto px-8 mt-8">
@@ -96,7 +95,7 @@
 
                     <div class="w-full mx-auto">
                         <img src="{{ asset('storage') }}/{{$village->cover_image}}"
-                            class="h-72 object-cover overflow-hidden" alt="Venue" aria-hidden="true">
+                            class="h-72 object-cover w-full overflow-hidden" alt="Venue" aria-hidden="true">
                     </div>
                     <div class="p-8">
                         <h3 class="text-3xl font-bold">
@@ -122,11 +121,10 @@
                 @endforeach
 
             </div>
+
         </div>
     </section>
-    <div class="bg-white text-gray-100 z-10">
-        @include('assets.wave')
-    </div>
+
 
 
     <section class="py-12 bg-white text-gray-800">
@@ -151,8 +149,11 @@
 
                 @endforeach
             </div>
-        </div>
 
+        </div>
+        <div class="mt-8 text-center">
+            <x-link link="/venues" label="View All Venues" target="_self" />
+        </div>
     </section>
     <div class="text-white bg-gray-100">
         @include('assets.wave')
@@ -178,7 +179,7 @@
                     @endforeach
                 </div>
                 <div class="mt-8 text-center">
-                    <x-link link="/events.html" label="All Events" target="_self" />
+                    <x-link link="/events" label="All Events" target="_self" />
                 </div>
             </div>
 
@@ -186,25 +187,9 @@
     </div>
 
 
-    {{-- Quick Links
-
-    <div class="py-12">
-
-        <div class="max-w-7xl mx-auto p-8">
-            <h3 class="text-3xl text-pink-600 text-center">Important Links</h3>
-            <div class="grid grid-cols-2 lg:grid-cols-3 mt-4 gap-4 justify-between">
-                <div class="p-4 text-center"><a target="_blank" href="#">
-                        <img class="mx-auto" src="{{ asset('storage/images/layout') }}/placeholder.png"
-                            alt="Chinley Community Association"></a>
-                </div>
-
-
-            </div>
-        </div>
-
-    </div> --}}
-
+    <x-facebook-feed />
     @include('includes.blurb')
+
 </main>
 <script>
     var swiper = new Swiper(".homeslider", {

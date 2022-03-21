@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('head_scripts')
-<title>Home - {{ config('app.name') }}</title>
+<title>{{$page->meta_title ?? $page->name}} - {{ config('app.name') }}</title>
 <meta name="description" content="Chinley Community.">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -13,16 +13,13 @@
             <div class="mx-auto max-w-md sm:max-w-3xl lg:max-w-none lg:w-1/2 lg:mx-0">
                 <h1
                     class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
-                    Chinley, Buxworth & Brownside
-                    <span class="block text-pink-600">Community Association </span>
+                    Chinley, Buxworth & Brownside Community Association
+                    <span class="block text-pink-600"> {{$page->name}}</span>
+
                 </h1>
                 <p
                     class="relative z-10  mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none text-center md:text-left">
-                    The Community Association manages Chinley, Buxworth and Brownside Community Centre on Lower Lane.
-
-                    We work with the other community organisations in the Parish to signpost to each other's facilities
-                    as there is usually a venue to meet the need. For details of the other community facilities for
-                    hire, see below.
+                    {{$page->intro}}
                 </p>
 
                 {{-- <div class="flex justify-center sm:justify-start">
@@ -38,7 +35,7 @@
         <div
             class="relative  -mt-15 sm:mt-0 w-full sm:h-72 md:h-96 lg:h-full lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
             <picture>
-                <img src="{{asset('storage/images/slider/slider1.jpg')}}"
+                <img src="{{asset('storage')}}/{{$page->cover_image}}"
                     class="sm:absolute sm:inset-0 sm:w-full sm:h-full sm:object-cover" alt="sfdfsdf" aria-hidden="true">
             </picture>
         </div>

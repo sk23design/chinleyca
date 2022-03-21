@@ -23,8 +23,18 @@
         @endforeach
     </select>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-        @foreach ($events as $event)
+
+
+        @forelse ($events as $event)
         <x-event-card :event="$event"></x-event-card>
-        @endforeach
+        @empty
+        <div class="col-start-1 col-end-5">
+            <p class="text-gray-600 font-bold text-center">We dont currently have any events in
+                <span class="text-pink-600">{{$current_category_name}}</span>.
+            </p>
+        </div>
+
+
+        @endforelse
     </div>
 </section>
