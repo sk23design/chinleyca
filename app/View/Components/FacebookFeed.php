@@ -19,8 +19,8 @@ class FacebookFeed extends Component
     public function __construct()
     {
         $fbSecretKey = '31028bebf86d3785561d4982795fb9b5';
-        $fbAppId = '233236122274096';
-        $fbPageName = 'keycarleasing';
+        $fbAppId = '644760863488036';
+        $fbPageName = '191049660915133';
         $feed = [];
         if ($feed = Cache::get('fb_feed')) {
             return $feed;
