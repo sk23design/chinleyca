@@ -12,7 +12,7 @@
                 Chinley, Buxworth & Brownside Association
                 <span class="block text-pink-600">{{$page->name}}</span>
             </h1>
-            <p class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
+            <p class="relative z-10 mb-10 mx-auto text-gray-600 text-center md:text-left text-lg sm:text-xl md:max-w-xl lg:max-w-none">
                 {{$page->intro}}
 
             </p>
@@ -38,13 +38,16 @@
 </header>
 <section class="bg-gray-100 py-12">
 
-    <div class="max-w-7xl mx-auto py-8 px-8">
+    <div class="max-w-5xl mx-auto py-8 px-8 bg-white rounded-xl  shadow-xl">
+    
+
+
         <h2
             class="my-8 text-pink-500 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
             {{$page->subtitle}}
         </h2>
 
-        <div>
+        <div class="content">
             {!!$page->description!!}
         </div>
 
@@ -52,7 +55,32 @@
 
     </div>
 </section>
+@if (count($page->documents))
+<section class="bg-gray-100 py-12">
 
+  <div class="max-w-5xl mx-auto py-8 px-8 bg-white rounded-xl  shadow-xl">
+    <h2
+      class="my-8 text-pink-400 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
+      Related
+      <span class="block text-pink-500">Documents</span>
+    </h2>
+
+
+    <div class="documents mt-8">
+      @forelse ($page->documents as $document)
+      <x-document :document=$document></x-document>
+      @empty
+      <div>Currently No Documents To Show.</div>
+      @endforelse
+      {{-- <div class="mt-4">
+        {{$documents->links()}}
+      </div> --}}
+    </div>
+
+
+  </div>
+</section>
+@endif
 @include('includes.blurb')
 
 

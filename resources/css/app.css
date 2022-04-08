@@ -92,6 +92,10 @@ nav > ul {
     @apply rounded-full bg-teal-600 p-1 px-4 text-white;
 }
 
+.content h2{
+@apply font-bold;
+}
+
 .content table {
     @apply w-full table text-left table-fixed;
 }

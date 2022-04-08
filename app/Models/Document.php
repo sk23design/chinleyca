@@ -27,6 +27,11 @@ class Document extends Model implements Sortable
         return $this->belongsTo(\App\Models\Information::class, 'information_id', 'id');
     }
 
+    public function page()
+    {
+        return $this->belongsTo(\App\Models\Page::class, 'page_id', 'id');
+    }
+
     public function getDocType()
     {
         $document = $this->link;

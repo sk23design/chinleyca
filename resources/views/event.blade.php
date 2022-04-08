@@ -24,13 +24,14 @@
                 <div class="flex justify-center sm:justify-start gap-4">
                     <span class="rounded-md shadow">
                         <a href="/events"
-                            class="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:border-teal-600 focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Back</a>
+                            class="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:border-teal-600 focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+                              </svg>
+                            <span clas="ml-2">Back</span>
+                            </a>
                     </span>
-                    <span class="rounded-md shadow">
-                        <a href="#book"
-                            class="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:border-teal-600 focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Book
-                            {{ $event->title }}</a>
-                    </span>
+              
                 </div>
             </div>
         </div>
@@ -70,7 +71,7 @@
                     <div class="max-w-7xl mx-auto">
                         <dl class="rounded-lg bg-white shadow-lg md:grid md:grid-cols-3 items-start">
                             <div class="border-b border-gray-100 p-6 text-center md:border-0 md:border-r">
-                                <dt class="text-2xl leading-none font-extrabold text-pink-600">
+                                <dt class="text-2xl leading-none font-extrabold text-gray-600">
 
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-3 text-gray-400"
                                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -80,13 +81,14 @@
                                     {{$event->contact_name}}
                                 </dt>
                                 <dd class="mt-3 text-gray-600 md:text-center">
+                                    <a class="text-pink-600" href="mailto:  {{$event->contact_email}}">
+                                        {{$event->contact_email}}</a>
 
-                                    {{$event->contact_email}}
                                 </dd>
                             </div>
                             <div
                                 class="flex flex-col border-t border-b border-gray-100 p-6 text-center sm:border-0 sm:border-l sm:border-r">
-                                <dt class="text-2xl leading-none font-extrabold text-pink-600">
+                                <dt class="text-2xl leading-none font-extrabold text-gray-600">
 
 
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-3 text-gray-400"
@@ -102,7 +104,7 @@
                                 </dd>
                             </div>
                             <div class="flex flex-col border-t border-gray-100 p-6 text-center sm:border-0 sm:border-l">
-                                <dt class="text-2xl leading-none font-extrabold text-pink-600">
+                                <dt class="text-2xl leading-none font-extrabold text-gray-600">
 
 
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-3 text-gray-400"
@@ -112,7 +114,7 @@
                                     </svg>
                                     Website
                                 </dt>
-                                <dd class="mt-3 text-gray-600 md:text-center">
+                                <dd class="mt-3 text-pink-600 md:text-center">
                                     <a target="_blank" href="{{$event->website}}">{{$event->website}}</a>
                                 </dd>
                             </div>
@@ -150,63 +152,7 @@
     </div>
     <div class="py-12 bg-blue-500">
 
-        <div class="relative max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:pl-12 lg:pr-8 lg:py-16">
-            <div class="md:ml-auto md:w-1/2 md:pl-10 mx-auto">
-                <div class="text-base leading-6 font-semibold uppercase tracking-wider text-gray-300">
-                    Looking to book {{ $event->name }}?
-                </div>
-                <h2 class="mt-2 text-white text-3xl leading-9 font-extrabold sm:text-4xl sm:leading-10">
-                    Book Here
-                </h2>
-
-
-                <form action="" method="POST" class="mt-8">
-
-                    <div>
-                        <label for="contactName" class="block text-sm font-medium leading-5 text-white">Your
-                            name</label>
-                        <div class="mt-1 rounded-md shadow-sm">
-                            <input id="contact-fullName" name="fullName" autocomplete="name" autocapitalize="words"
-                                type="text" maxlength="70" required=""
-                                class="appearance-none block w-full px-4 py-4 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
-                        </div>
-                    </div>
-
-                    <div class="mt-4">
-                        <label for="contactEmail" class="block text-sm font-medium leading-5 text-white">Email
-                            address</label>
-                        <div class="mt-1 rounded-md shadow-sm">
-                            <input id="contact-email" name="email" autocomplete="email" type="email" maxlength="254"
-                                required=""
-                                class="appearance-none block w-full px-4 py-4 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
-                        </div>
-                    </div>
-
-                    <div class="mt-4">
-                        <div class="flex justify-between">
-                            <label for="contact-phone" class="block text-sm font-medium leading-5 text-white">Phone
-                                number</label>
-
-                        </div>
-                        <div class="mt-1 rounded-md shadow-sm">
-                            <input id="contact-phone" name="phone" autocomplete="tel" type="tel"
-                                aria-describedby="contact-phone-optional"
-                                class="appearance-none block w-full px-4 py-4 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
-                        </div>
-                    </div>
-
-
-                    <div class="mt-8">
-                        <span class="rounded-md shadow">
-                            <button type="submit"
-                                class="w-full border border-transparent text-base leading-6 font-medium rounded-md text-white bg-pink-600 hover:text-pink-100 focus:outline-none focus:text-pink-600 focus:shadow-outline transition duration-150 ease-in-out px-5 py-3">
-                                Request A Booking
-                            </button>
-                        </span>
-                    </div>
-                </form>
-            </div>
-        </div>
+        
     </div>
 </main>
 @endsection

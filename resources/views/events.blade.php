@@ -10,7 +10,7 @@
 
 
 <header class="relative bg-cool-gray-100 lg:bg-gray-50">
-    <div class="relative pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 mx-auto lg:max-w-7xl">
+    <div class="relative pt-10 sm:pb-10 py-12 lg:py-24 px-4 sm:px-8 mx-auto lg:max-w-7xl">
         <div class="mx-auto max-w-md sm:max-w-3xl lg:max-w-none lg:w-1/2 lg:mx-0">
             <h1
                 class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">

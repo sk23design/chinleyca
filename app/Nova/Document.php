@@ -53,7 +53,8 @@ class Document extends Resource
             File::make('Upload')->hideFromIndex(),
             Date::make('Created At')->sortable(),
             Date::make('Expires At')->sortable(),
-            BelongsTo::make('Information')->nullable(),
+// BelongsTo::make('Information')->nullable(),
+            BelongsTo::make('Page')->nullable(),
 
             //BelongsTo::make('Page'),
         ];

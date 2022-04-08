@@ -9,7 +9,7 @@
 @section('content')
 <main>
     <header class="relative bg-gray-100">
-        <div class="relative pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 mx-auto lg:max-w-7xl">
+        <div class="relative pt-10 sm:pb-10 py-12 lg:py-24 px-4 sm:px-8 mx-auto lg:max-w-7xl">
             <div class="mx-auto max-w-md sm:max-w-3xl lg:max-w-none lg:w-1/2 lg:mx-0">
 
                 <h1
@@ -21,14 +21,14 @@
                     {{ $venue->intro }}
                 </p>
 
-                <div class="">
+                <div class=" gap-4">
                     @if ($venue->use_external_website)
                     <p class="mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none relative z-10">
                         Bookings and enquiries should be made directly with {{$venue->name}}.
                     </p>
                     <a href="{{$venue->website}}" target="_blank"
                         class="inline-flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:border-teal-600 focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Book
-                        {{ $venue->name }} <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-6 w-6" fill="none"
+                     <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -65,19 +65,12 @@
                     aria-hidden="true">
             </picture>
         </div>
+        <svg class="hidden lg:block absolute right-1/2 inset-y-0 h-full w-48 text-gray-100 transform translate-x-1/2"
+        fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M50 0h50L50 100H0z"></path>
+    </svg>
 
 
-        <svg class="block lg:hidden absolute top-0 left-0 w-full text-gray-50 " viewBox="0 0 411 201">
-            <path
-                d="M0 0C80.0392 0 322.5 0 322.5 0C322.5 0 330.534 0 411 0C411 0 411 5.1327 411 25.5C411 39 343.5 38 276.5 105.5C209.5 173 146 105.5 86.5 140.5C27 175.5 0 201 0 201V0Z"
-                fill="currentColor"></path>
-        </svg>
-
-
-        <svg class="hidden lg:block absolute right-1/2 inset-y-0 h-full w-48 text-gray-100 transform translate-x-1/2 "
-            fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path d="M50 0h50L50 100H0z"></path>
-        </svg>
     </header>
     <div class="bg-gray-50 pt-12 sm:pt-16" id="info">
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -212,10 +205,9 @@
         @include('assets.wave')
     </div>
     <div class="py-12 bg-blue-500 ">
-
-        <div class="relative max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:pl-12 lg:pr-8 lg:py-16">
-            <div class="md:ml-auto md:w-1/2 md:pl-10 mx-auto
-            ">
+        @if (!$venue->use_external_website)
+        <div class="relative max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:pl-12 lg:pr-8">
+            <div class="md:ml-auto md:w-1/2 md:pl-10 mx-auto">
                 <div class="text-base leading-6 font-semibold uppercase tracking-wider text-gray-300">
                     Looking to book {{ $venue->name }}?
                 </div>
@@ -273,6 +265,7 @@
                 </form>
             </div>
         </div>
+        @endif
     </div>
 </main>
 @endsection

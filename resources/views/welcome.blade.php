@@ -194,7 +194,7 @@
 <script>
     var swiper = new Swiper(".homeslider", {
         spaceBetween: 0,
-     
+        effect:'fade',
         centeredSlides: true,
         autoplay: {
           delay: 3000,

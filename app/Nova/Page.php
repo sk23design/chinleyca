@@ -79,7 +79,7 @@ class Page extends Resource
                 'Venues' => 'Venues',
             ])->default('Page'),
             Boolean::make('Enabled')->default(true),
-            //HasMany::make('Documents'),
+            HasMany::make('Documents'),
         ];
     }
 
