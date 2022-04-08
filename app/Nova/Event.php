@@ -18,7 +18,7 @@ use Silvanite\NovaFieldCheckboxes\Checkboxes;
 
 class Event extends Resource
 {
-    public static $group = 'Content';
+    public static $group = 'Whats On';
 
     /**
      * The model the resource corresponds to.

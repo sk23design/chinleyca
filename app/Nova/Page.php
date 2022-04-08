@@ -15,6 +15,7 @@ use Manogi\Tiptap\Tiptap;
 
 class Page extends Resource
 {
+    public static $group = 'Content';
     /**
      * The model the resource corresponds to.
      *

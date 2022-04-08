@@ -13,7 +13,7 @@ use OptimistDigital\NovaSortable\Traits\HasSortableRows;
 class Document extends Resource
 {
     use HasSortableRows;
-
+    public static $group = 'Content';
     /**
      * The model the resource corresponds to.
      *

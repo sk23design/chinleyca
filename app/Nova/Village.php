@@ -13,6 +13,7 @@ use Manogi\Tiptap\Tiptap;
 
 class Village extends Resource
 {
+    public static $group = 'Venues';
     /**
      * The model the resource corresponds to.
      *

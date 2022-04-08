@@ -9,7 +9,7 @@ use Laravel\Nova\Fields\Text;
 
 class Category extends Resource
 {
-    public static $group = 'Content';
+    public static $group = 'Whats On';
 
     /**
      * The model the resource corresponds to.
