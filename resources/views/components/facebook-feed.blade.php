@@ -23,7 +23,14 @@
 
         <div class="bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
             <a href="{{$item['permalink_url']}}" target="_blank">
-                <img class="h-64 object-cover w-full bg-gray-200" src="{{$item['full_picture'] ?? ''}}" alt="">
+                @isset ($item['full_picture'])
+                <img class="h-64 object-cover w-full bg-gray-200" src="{{$item['full_picture'] }}" alt="">
+       
+                   @else 
+                   <div class="h-64 w-full bg-gray-200 p-8">
+                 @include('assets.logo')</div>
+                @endisset
+               
 
                 <div class="p-5">
 
