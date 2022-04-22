@@ -12,7 +12,7 @@ Please choose a section below to view related documents.">
       <h1
         class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
         Chinley, Buxworth & Brownside
-        <span class="block text-pink-600">Information</span>
+        <span class="block text-teal-600">Information</span>
       </h1>
       <p class=" relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
         The Chinley, Buxworth & Brownside Community Association is an organisation set up to deliver a range
@@ -24,7 +24,7 @@ Please choose a section below to view related documents.">
       <div class="flex justify-center sm:justify-start">
         <span class="rounded-md shadow">
           <a href="#section"
-            class="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-800 focus:outline-none  focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Read
+            class="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-600 hover:bg-teal-800 focus:outline-none  focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Read
             More..</a>
         </span>
       </div>

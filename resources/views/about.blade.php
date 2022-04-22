@@ -10,7 +10,7 @@
       <h1
         class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
         Chinley, Buxworth & Brownside Association
-        <span class="block text-pink-600">About Us</span>
+        <span class="block text-teal-600">About Us</span>
       </h1>
       <p class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
         Chinley Buxworth and Brownside Community Association are a charity supporting community activity in the Parish.
@@ -43,9 +43,9 @@
 
   <div class="max-w-7xl mx-auto py-8 px-8">
     <h2
-      class="my-8 text-pink-400 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
+      class="my-8 text-teal-400 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
       TBC
-      <span class="block text-pink-500">TBC</span>
+      <span class="block text-teal-500">TBC</span>
     </h2>
 
 

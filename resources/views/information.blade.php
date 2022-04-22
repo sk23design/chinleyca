@@ -10,7 +10,7 @@
       <h1
         class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
         Information
-        <span class="block text-pink-600">{{$information->name}}</span>
+        <span class="block text-teal-600">{{$information->name}}</span>
       </h1>
       <p class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
         {{$information->intro}}
@@ -19,7 +19,7 @@
       <div class="flex justify-center sm:justify-start">
         <span class="rounded-md shadow">
           <a href="#book"
-            class="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-800 focus:outline-none  focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Read
+            class="flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-600 hover:bg-teal-800 focus:outline-none  focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Read
             More..</a>
         </span>
       </div>
@@ -46,9 +46,9 @@
 
   <div class="max-w-5xl mx-auto py-8 px-8 bg-white rounded-xl  shadow-xl">
     <h2
-      class="my-8 text-pink-400 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
+      class="my-8 text-teal-400 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
       Related
-      <span class="block text-pink-500">Documents</span>
+      <span class="block text-teal-500">Documents</span>
     </h2>
 
 

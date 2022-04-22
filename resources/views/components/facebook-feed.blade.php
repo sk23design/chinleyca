@@ -2,7 +2,7 @@
     <h2
         class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
         Facebook
-        <span class="block text-pink-600">Feed</span>
+        <span class="block text-teal-600">Feed</span>
     </h2>
 
 
@@ -39,7 +39,7 @@
                     <p>{{$item['from']['name']}}</p>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{$item['message'] ?? 'Facebook'}}</p>
 
-                    <button class="flex align-middle items-center text-pink-600 font-bold mt-4">
+                    <button class="flex align-middle items-center text-teal-600 font-bold mt-4">
                         <span>Read more</span>
                         <svg class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">

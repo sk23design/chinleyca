@@ -31,7 +31,7 @@
 
 
                         @foreach (\App\Models\Page::where('enabled',1)->get() as $item)
-                        <li><a class="{{ request()->is($item->slug) ? 'text-pink-500 ' : '' }} px-4 py-2 hover:text-pink-400 hover:bg-gray-100 rounded-full"
+                        <li><a class="{{ request()->is($item->slug) ? 'text-teal-500 ' : '' }} px-4 py-2 hover:text-teal-400 hover:bg-gray-100 rounded-full"
                                 href="/{{$item->slug}}">{{$item->name}}</a></li>
                         @endforeach
 

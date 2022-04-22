@@ -11,7 +11,7 @@
             <p>{{$event->venue->name}}</p>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{$event->intro}}</p>
             {{$event->getRecurringDescription()}}
-            <button class="flex align-middle items-center text-pink-600 font-bold mt-4">
+            <button class="flex align-middle items-center text-teal-600 font-bold mt-4">
                 <span>Read more</span>
                 <svg class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">

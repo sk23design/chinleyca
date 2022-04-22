@@ -16,6 +16,6 @@
 </footer>
 <div class=" bg-gray-800">
     <div class="text-white p-4 max-w-7xl mx-auto px-8">
-        <small>{{date('Y')}} Design and Development By <span class="text-pink-600">SK23Design</span> </small>
+        <small>{{date('Y')}} Design and Development By <span class="text-teal-600">SK23Design</span> </small>
     </div>
 </div>

@@ -24,7 +24,7 @@
                             <h1
                                 class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
                                 Chinley, Buxworth & Brownside
-                                <span class="block text-pink-600">Community Association</span>
+                                <span class="block text-teal-600">Community Association</span>
                             </h1>
                             <p
                                 class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
@@ -82,7 +82,7 @@
             <h2
                 class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
                 Discover
-                <span class="block text-pink-600">Chinley, Buxworth & Brownside</span>
+                <span class="block text-teal-600">Chinley, Buxworth & Brownside</span>
             </h2>
             <p class="mt-4 text-center">{{$page->intro}}</p>
         </div>
@@ -91,7 +91,7 @@
             <div class="grid  md:grid-cols-3 gap-8">
 
                 @foreach ($villages as $village) <div
-                    class="text-center bg-pink-{{ 5 +$loop->index . '00' }} text-white overflow-hidden rounded-xl shadow-lg">
+                    class="text-center bg-teal-{{ 5 +$loop->index . '00' }} text-white overflow-hidden rounded-xl shadow-lg">
 
                     <div class="w-full mx-auto">
                         <img src="{{ asset('storage') }}/{{$village->cover_image}}"
@@ -105,7 +105,7 @@
                             {{$village->intro}}
                         </p>
                         {{-- <button
-                            class="inline-flex align-middle items-center mt-4 font-bold bg-white text-pink-600 px-4 py-2 rounded-full">
+                            class="inline-flex align-middle items-center mt-4 font-bold bg-white text-teal-600 px-4 py-2 rounded-full">
                             <span>Read more</span>
                             <svg class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -133,7 +133,7 @@
             <h2
                 class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center">
                 Local
-                <span class="block text-pink-600">Venues</span>
+                <span class="block text-teal-600">Venues</span>
             </h2>
             <p class="mt-4 text-center">Our website provides information on activities groups and events, community
                 facilities and spaces and services provided by us and the many organisations across the parish.</p>
@@ -165,7 +165,7 @@
             <h2
                 class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
                 What's
-                <span class="block text-pink-600">On</span>
+                <span class="block text-teal-600">On</span>
             </h2>
             <div class="max-w-7xl mt-8 px-8 mx-auto">
                 <div class="grid  md:grid-cols-3 gap-8">

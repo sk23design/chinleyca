@@ -17,7 +17,7 @@
             <h2
                 class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center">
                 Local
-                <span class="block text-pink-600">Venues</span>
+                <span class="block text-teal-600">Venues</span>
             </h2>
             <p class="mt-4 text-center"> {{$page->intro}}</p>
         </div>
@@ -47,7 +47,7 @@
     <div class="py-12">
 
         <div class="max-w-7xl mx-auto p-8">
-            <h3 class="text-3xl text-pink-600 text-center">Important Links</h3>
+            <h3 class="text-3xl text-teal-600 text-center">Important Links</h3>
             <div class="grid grid-cols-2 lg:grid-cols-3 mt-4 gap-4 justify-between">
                 <div class="p-4 text-center"><a target="_blank" href="https://parentview.ofsted.gov.uk/">
                         <img class="mx-auto" src="{{ asset('storage/images/layout') }}/ofsted-parent-view.png"
@@ -72,7 +72,7 @@
 
     @if ($events ?? '')
     <div class="bg-gray-100 py-12">
-        <h3 class="text-3xl text-pink-600 text-center">Events</h3>
+        <h3 class="text-3xl text-teal-600 text-center">Events</h3>
         @include('includes.events-list')
     </div>
     @endif

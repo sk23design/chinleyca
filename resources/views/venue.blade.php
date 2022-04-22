@@ -15,10 +15,10 @@
                 <h1
                     class="mb-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left relative z-10">
                     {{ $venue->name }}
-                    <span class="block text-pink-600">{{ $venue->town }}</span>
+                    <span class="block text-teal-600">{{ $venue->town }}</span>
                 </h1>
                 <p class="mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none relative z-10">
-                    {{ $venue->intro }}
+                    { $venue->intro }}
                 </p>
 
                 <div class=" gap-4">
@@ -79,7 +79,7 @@
                     About {{$venue->name}}
                 </h2>
                 <p class="mt-3 text-xl leading-7 text-gray-500 sm:mt-4">
-                    {{$venue->description}}
+                    {!!$venue->description!!}
                 </p>
             </div>
         </div>
@@ -90,7 +90,7 @@
                     <div class="max-w-7xl mx-auto">
                         <dl class="rounded-lg bg-white shadow-lg md:grid md:grid-cols-3 items-start">
                             <div class="border-b border-gray-100 p-6 text-center md:border-0 md:border-r">
-                                <dt class="text-2xl leading-none font-extrabold text-pink-600">
+                                <dt class="text-2xl leading-none font-extrabold text-teal-600">
 
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-gray-400 mx-auto mb-4"
                                         viewBox="0 0 20 20" fill="currentColor">
@@ -105,7 +105,7 @@
                             </div>
                             <div
                                 class="flex flex-col border-t border-b border-gray-100 p-6 text-center sm:border-0 sm:border-l sm:border-r">
-                                <dt class="text-2xl leading-none font-extrabold text-pink-600">
+                                <dt class="text-2xl leading-none font-extrabold text-teal-600">
 
 
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-gray-400 mx-auto mb-4"
@@ -127,7 +127,7 @@
                                 </dd>
                             </div>
                             <div class="flex flex-col border-t border-gray-100 p-6 text-center sm:border-0 sm:border-l">
-                                <dt class="text-2xl leading-none font-extrabold text-pink-600">
+                                <dt class="text-2xl leading-none font-extrabold text-teal-600">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-gray-400"
                                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -173,7 +173,7 @@
             <h2
                 class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-3xl sm:text-4xl text-center ">
                 What's On
-                <span class="block text-pink-600">{{$venue->name}}</span>
+                <span class="block text-teal-600">{{$venue->name}}</span>
             </h2>
             <div class="max-w-7xl mt-8 px-8 mx-auto">
                 <div class="grid md:grid-cols-3 gap-8 ">
@@ -257,7 +257,7 @@
                     <div class="mt-8">
                         <span class="rounded-md shadow">
                             <button type="submit"
-                                class="w-full flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-pink-500 hover:text-pink-100 focus:outline-none focus:text-pink-600 focus:shadow-outline transition duration-150 ease-in-out px-5 py-3">
+                                class="w-full flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-500 hover:text-teal-100 focus:outline-none focus:text-teal-600 focus:shadow-outline transition duration-150 ease-in-out px-5 py-3">
                                 Send your request
                             </button>
                         </span>

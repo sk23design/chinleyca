@@ -15,7 +15,7 @@
             <h1
                 class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
                 Chinley, Buxworth & Brownside Community Association
-                <span class="block text-pink-600">{{$page->name ?? "What's On"}}</span>
+                <span class="block text-teal-600">{{$page->name ?? "What's On"}}</span>
             </h1>
             <p
                 class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none text-center md:text-left">

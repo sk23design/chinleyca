@@ -15,7 +15,7 @@
                 <h1
                     class="mb-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left relative z-10">
                     {{ $event->title }}
-                    <span class="block text-pink-600">{{ $event->venue->name }}</span>
+                    <span class="block text-teal-600">{{ $event->venue->name }}</span>
                 </h1>
                 <p class="mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
                     {{ $event->intro }}
@@ -81,7 +81,7 @@
                                     {{$event->contact_name}}
                                 </dt>
                                 <dd class="mt-3 text-gray-600 md:text-center">
-                                    <a class="text-pink-600" href="mailto:  {{$event->contact_email}}">
+                                    <a class="text-teal-600" href="mailto:  {{$event->contact_email}}">
                                         {{$event->contact_email}}</a>
 
                                 </dd>
@@ -114,7 +114,7 @@
                                     </svg>
                                     Website
                                 </dt>
-                                <dd class="mt-3 text-pink-600 md:text-center">
+                                <dd class="mt-3 text-teal-600 md:text-center">
                                     <a target="_blank" href="{{$event->website}}">{{$event->website}}</a>
                                 </dd>
                             </div>
@@ -135,7 +135,7 @@
             <h2 class=" py-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl
             sm:text-5xl text-center ">
                 Similar
-                <span class=" block text-pink-600">Events</span>
+                <span class=" block text-teal-600">Events</span>
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 py-8">
 
