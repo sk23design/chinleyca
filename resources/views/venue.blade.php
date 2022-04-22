@@ -18,7 +18,7 @@
                     <span class="block text-teal-600">{{ $venue->town }}</span>
                 </h1>
                 <p class="mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none relative z-10">
-                    { $venue->intro }}
+                    {{ $venue->intro }}
                 </p>
 
                 <div class=" gap-4">
@@ -78,9 +78,9 @@
                 <h2 class="text-3xl leading-9 font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
                     About {{$venue->name}}
                 </h2>
-                <p class="mt-3 text-xl leading-7 text-gray-500 sm:mt-4">
+                <div class="mt-3 text-xl leading-7 text-gray-500 sm:mt-4">
                     {!!$venue->description!!}
-                </p>
+                </div>
             </div>
         </div>
         <div class="py-12">
