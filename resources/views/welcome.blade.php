@@ -12,46 +12,43 @@
 
 <main>
     <header class="relative bg-gray-100 lg:bg-gray-50">
+        <div class="text-center max-w-5xl mx-auto py-12 px-8">
+            <div class="w-32 mx-auto"> @include('assets.logo')</div>
+                        <h1
+                            class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
+                            Chinley, Buxworth & Brownside
+                            <span class="block text-teal-600">Community Association</span>
+                        </h1>
+                        <p
+                            class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
+                            Chinley Buxworth and Brownside Community Association are a charity supporting community
+                            activity in
+                            the Parish.
+                            We were established in 2006 following the first Parish Plan, and have been growing
+                            and developing
+                            ever since.
 
+                        </p>
+
+                        <p
+                            class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
+                            Our volunteers work with other community organisations to provide and promote community
+                            activities, events and venues for all.
+                            For more information about the Community Association and how we operate, </p>
+        </div>
         <div class="swiper homeslider">
+            
             <div class="swiper-wrapper">
 
                 @for ($i = 1; $i < 6; $i++) <div class="swiper-slide">
 
-                    <div class="relative pt-10 sm:pb-10 md:py-18 lg:py-24 px-4 sm:px-8 mx-auto lg:max-w-7xl">
-                        <div class="mx-auto max-w-md sm:max-w-3xl lg:max-w-none lg:w-1/2 lg:mx-0">
-                            <div class="w-32 mx-auto md:mx-0"> @include('assets.logo')</div>
-                            <h1
-                                class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
-                                Chinley, Buxworth & Brownside
-                                <span class="block text-teal-600">Community Association</span>
-                            </h1>
-                            <p
-                                class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
-                                Chinley Buxworth and Brownside Community Association are a charity supporting community
-                                activity in
-                                the Parish.
-                                We were established in 2006 following the first Parish Plan, and have been growing
-                                and developing
-                                ever since.
-
-                            </p>
-
-                            <p
-                                class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
-                                Our volunteers work with other community organisations to provide and promote community
-                                activities, events and venues for all.
-                                For more information about the Community Association and how we operate, </p>
-
-
-                        </div>
-                    </div>
+           
 
                     <div
-                        class="relative -mt-15 sm:mt-0 w-full sm:h-72 md:h-96 lg:h-full lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+                        class="h-96">
                         <picture>
                             <img src="{{ asset('storage/images/slider/slider'.$i.'.jpg') }}"
-                                class="sm:absolute sm:inset-0 sm:w-full sm:h-full sm:object-cover" alt="Venue"
+                                class="h-96 object-cover w-full" alt="Venue"
                                 aria-hidden="true">
                         </picture>
                     </div>
@@ -59,11 +56,6 @@
 
 
 
-
-                    <svg class="hidden lg:block absolute right-1/2 inset-y-0 h-full w-48 text-gray-50 transform translate-x-1/2"
-                        fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M50 0h50L50 100H0z"></path>
-                    </svg>
 
             </div>
 

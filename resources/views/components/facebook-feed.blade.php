@@ -55,4 +55,7 @@
 
         @endforeach
     </div>
+    <div class="mt-8 text-center">
+        <x-link link="https://www.facebook.com/Chinley-Buxworth-and-Brownside-Community-Association-191049660915133" label="View On Facebook" target="_blank" />
+    </div>
 </section>

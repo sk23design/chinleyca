@@ -2,13 +2,13 @@
     <div class="hidden md:flex gap-4">
         @foreach ($categories as $category)
         <button wire:click="setCurrentCategory({{$category->id}})"
-            class="rounded-lg p-2 px-4 border-2 border-pink-500  font-bold @if($category->id== $current_category) bg-teal-600 text-white hover:text-white hover:bg-teal-600 @else bg-white text-teal-600 hover:text-white hover:bg-teal-600 @endif">
+            class="rounded-lg p-2 px-4 border-2 border-teal-500  font-bold @if($category->id== $current_category) bg-teal-600 text-white hover:text-white hover:bg-teal-600 @else bg-white text-teal-600 hover:text-white hover:bg-teal-600 @endif">
             {{$category->name}}
         </button>
 
         @endforeach
         <button wire:click="resetCurrentCategory()"
-            class="border-2 border-pink-500 rounded-lg p-2 px-4 bg-white font-bold text-teal-600 hover:text-white hover:bg-teal-600">
+            class="border-2 border-teal-500 rounded-lg p-2 px-4 bg-white font-bold text-teal-600 hover:text-white hover:bg-teal-600">
             All
         </button>
 
@@ -17,7 +17,7 @@
 
     </div>
 
-    <select class="md:hidden p-4 border-2 border-pink-500 rounded-lg w-full" wire:model="current_category" id="">
+    <select class="md:hidden p-4 border-2 border-teal-500 rounded-lg w-full" wire:model="current_category" id="">
         @foreach ($categories as $category)
         <option value="{{$category->id}}"> {{$category->name}}</option>
         @endforeach

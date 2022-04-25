@@ -205,7 +205,7 @@
         @include('assets.wave')
     </div>
     <div class="py-12 bg-blue-500 ">
-        @if (!$venue->use_external_website)
+        @if (!$venue->use_external_website && false)
         <div class="relative max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:pl-12 lg:pr-8">
             <div class="md:ml-auto md:w-1/2 md:pl-10 mx-auto">
                 <div class="text-base leading-6 font-semibold uppercase tracking-wider text-gray-300">
