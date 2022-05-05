@@ -51,7 +51,7 @@ class Event extends Model
 
     public function getRecurringDescription()
     {
-        $dowMap = ['', 'Mondays', 'Tuedays', 'Wednesdays', 'Thursdays', 'Fridays', 'Saturdays', 'Sundays'];
+        $dowMap = ['', 'Mondays', 'Tuesdays', 'Wednesdays', 'Thursdays', 'Fridays', 'Saturdays', 'Sundays'];
         $daysText = [];
         if ($this->days) {
             foreach ($this->days as $day) {
