@@ -108,3 +108,21 @@ nav > ul {
 .information {
     @apply border-8 border-blue-500 rounded-2xl bg-white text-blue-500 transition-all;
 }
+
+
+
+.teal1{
+    @apply  bg-teal-500;
+}
+
+.teal2{
+    @apply  bg-teal-600;
+}
+
+.teal3{
+    @apply  bg-teal-700;
+}
+
+.teal4{
+    @apply  bg-teal-800;
+}
