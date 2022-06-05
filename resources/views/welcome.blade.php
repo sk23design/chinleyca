@@ -1,102 +1,99 @@
 @extends('layouts.app')
 @section('head_scripts')
-<title>Home - {{ config('app.name') }}</title>
-<meta name="description" content="Chinley Community.">
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-
+    <title>Home - {{ config('app.name') }}</title>
+    <meta name="description" content="Chinley Community.">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 @endsection
 
 @section('content')
+    <main>
+        <header class="relative bg-gray-100 lg:bg-gray-50">
+            <div class="text-center max-w-5xl mx-auto py-12 px-8">
+                <div class="w-32 mx-auto"> @include('assets.logo')</div>
+                <h1
+                    class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
+                    Chinley, Buxworth & Brownside
+                    <span class="block text-teal-600">Community Association</span>
+                </h1>
+                <p class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
+                    Chinley Buxworth and Brownside Community Association are a charity supporting community
+                    activity in
+                    the Parish.
+                    We were established in 2006 following the first Parish Plan, and have been growing
+                    and developing
+                    ever since.
 
-<main>
-    <header class="relative bg-gray-100 lg:bg-gray-50">
-        <div class="text-center max-w-5xl mx-auto py-12 px-8">
-            <div class="w-32 mx-auto"> @include('assets.logo')</div>
-                        <h1
-                            class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
-                            Chinley, Buxworth & Brownside
-                            <span class="block text-teal-600">Community Association</span>
-                        </h1>
-                        <p
-                            class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
-                            Chinley Buxworth and Brownside Community Association are a charity supporting community
-                            activity in
-                            the Parish.
-                            We were established in 2006 following the first Parish Plan, and have been growing
-                            and developing
-                            ever since.
+                </p>
 
-                        </p>
+                <p class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
+                    Our volunteers work with other community organisations to provide and promote community
+                    activities, events and venues for all.
+                    For more information about the Community Association and how we operate, </p>
+            </div>
+            <div class="swiper homeslider">
 
-                        <p
-                            class="relative z-10 mb-10 mx-auto text-gray-600 text-lg sm:text-xl md:max-w-xl lg:max-w-none">
-                            Our volunteers work with other community organisations to provide and promote community
-                            activities, events and venues for all.
-                            For more information about the Community Association and how we operate, </p>
-        </div>
-        <div class="swiper homeslider">
-            
-            <div class="swiper-wrapper">
+                <div class="swiper-wrapper">
 
-                @for ($i = 1; $i < 6; $i++) <div class="swiper-slide">
+                    @for ($i = 1; $i < 6; $i++)
+                        <div class="swiper-slide">
 
-           
 
-                    <div
-                        class="h-96">
-                        <picture>
-                            <img src="{{ asset('storage/images/slider/slider'.$i.'.jpg') }}"
-                                class="h-96 object-cover w-full" alt="Venue"
-                                aria-hidden="true">
-                        </picture>
-                    </div>
+
+                            <div class="h-96">
+                                <picture>
+                                    <img src="{{ asset('storage/images/slider/slider' . $i . '.jpg') }}"
+                                        class="h-96 object-cover w-full" alt="Venue" aria-hidden="true">
+                                </picture>
+                            </div>
 
 
 
 
 
+                        </div>
+                    @endfor
+                </div>
+            </div>
+        </header>
+
+
+        </section>
+
+
+        <x-notice-board />
+
+
+        <section class="py-12 bg-gray-100">
+
+            <div class="max-w-7xl px-8 mx-auto text-gray-800 ">
+                <h2
+                    class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
+                    Discover
+                    <span class="block text-teal-600">Chinley, Buxworth & Brownside</span>
+                </h2>
+                <p class="mt-4 text-center">{{ $page->intro }}</p>
             </div>
 
+            <div class="max-w-7xl mx-auto px-8 mt-8">
+                <div class="grid  md:grid-cols-3 gap-8">
 
-            @endfor
-        </div>
-        </div>
-    </header>
+                    @foreach ($villages as $village)
+                        <div
+                            class="text-center bg-teal-{{ 5 + $loop->index . '00' }} text-white overflow-hidden rounded-xl shadow-lg">
 
-
-    </section>
-
-    <section class="py-12 bg-gray-100">
-
-        <div class="max-w-7xl px-8 mx-auto text-gray-800 ">
-            <h2
-                class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
-                Discover
-                <span class="block text-teal-600">Chinley, Buxworth & Brownside</span>
-            </h2>
-            <p class="mt-4 text-center">{{$page->intro}}</p>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-8 mt-8">
-            <div class="grid  md:grid-cols-3 gap-8">
-
-                @foreach ($villages as $village) <div
-                    class="text-center bg-teal-{{ 5 +$loop->index . '00' }} text-white overflow-hidden rounded-xl shadow-lg">
-
-                    <div class="w-full mx-auto">
-                        <img src="{{ asset('storage') }}/{{$village->cover_image}}"
-                            class="h-72 object-cover w-full overflow-hidden" alt="Venue" aria-hidden="true">
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-3xl font-bold">
-                            {{$village->name}}
-                        </h3>
-                        <p class="mt-4">
-                            {{$village->intro}}
-                        </p>
-                        {{-- <button
+                            <div class="w-full mx-auto">
+                                <img src="{{ asset('storage') }}/{{ $village->cover_image }}"
+                                    class="h-72 object-cover w-full overflow-hidden" alt="Venue" aria-hidden="true">
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-3xl font-bold">
+                                    {{ $village->name }}
+                                </h3>
+                                <p class="mt-4">
+                                    {{ $village->intro }}
+                                </p>
+                                {{-- <button
                             class="inline-flex align-middle items-center mt-4 font-bold bg-white text-teal-600 px-4 py-2 rounded-full">
                             <span>Read more</span>
                             <svg class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
@@ -106,93 +103,84 @@
                                     clip-rule="evenodd"></path>
                             </svg>
                         </button> --}}
-                    </div>
+                            </div>
+
+                        </div>
+                    @endforeach
 
                 </div>
 
-                @endforeach
+            </div>
+        </section>
 
+
+
+        <section class="py-12 bg-white text-gray-800">
+            <div class="max-w-4xl px-8 mx-auto">
+
+                <h2
+                    class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center">
+                    Local
+                    <span class="block text-teal-600">Venues</span>
+                </h2>
+                <p class="mt-4 text-center">Our website provides information on activities groups and events, community
+                    facilities and spaces and services provided by us and the many organisations across the parish.</p>
             </div>
 
-        </div>
-    </section>
-
-
-
-    <section class="py-12 bg-white text-gray-800">
-        <div class="max-w-4xl px-8 mx-auto">
-
-            <h2
-                class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center">
-                Local
-                <span class="block text-teal-600">Venues</span>
-            </h2>
-            <p class="mt-4 text-center">Our website provides information on activities groups and events, community
-                facilities and spaces and services provided by us and the many organisations across the parish.</p>
-        </div>
-
-        <div class="max-w-7xl mt-8 px-8 mx-auto">
-            <div class="grid  md:grid-cols-3 gap-8">
-                @foreach ($venues as $venue)
-
-
-                <x-venue-card :venue="$venue"></x-venue-card>
-
-
-                @endforeach
-            </div>
-
-        </div>
-        <div class="mt-8 text-center">
-            <x-link link="/venues" label="View All Venues" target="_self" />
-        </div>
-    </section>
-    <div class="text-white bg-gray-100">
-        @include('assets.wave')
-    </div>
-
-    <div>
-        <div class="bg-gray-100 py-12">
-
-            <h2
-                class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
-                What's
-                <span class="block text-teal-600">On</span>
-            </h2>
             <div class="max-w-7xl mt-8 px-8 mx-auto">
                 <div class="grid  md:grid-cols-3 gap-8">
-                    @foreach ($events as $event)
-
-
-                    <x-event-card :event="$event">
-                    </x-event-card>
-
-
+                    @foreach ($venues as $venue)
+                        <x-venue-card :venue="$venue"></x-venue-card>
                     @endforeach
                 </div>
-                <div class="mt-8 text-center">
-                    <x-link link="/events" label="All Events" target="_self" />
-                </div>
+
             </div>
-
+            <div class="mt-8 text-center">
+                <x-link link="/venues" label="View All Venues" target="_self" />
+            </div>
+        </section>
+        <div class="text-white bg-gray-100">
+            @include('assets.wave')
         </div>
-    </div>
+
+        <div>
+            <div class="bg-gray-100 py-12">
+
+                <h2
+                    class="my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center ">
+                    What's
+                    <span class="block text-teal-600">On</span>
+                </h2>
+                <div class="max-w-7xl mt-8 px-8 mx-auto">
+                    <div class="grid  md:grid-cols-3 gap-8">
+                        @foreach ($events as $event)
+                            <x-event-card :event="$event">
+                            </x-event-card>
+                        @endforeach
+                    </div>
+                    <div class="mt-8 text-center">
+                        <x-link link="/events" label="All Events" target="_self" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
 
-    <x-facebook-feed />
-    @include('includes.blurb')
+        <x-facebook-feed />
+        @include('includes.blurb')
 
-</main>
-<script>
-    var swiper = new Swiper(".homeslider", {
-        spaceBetween: 0,
-        effect:'fade',
-        centeredSlides: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-      
-      });
-</script>
+    </main>
+    <script>
+        var swiper = new Swiper(".homeslider", {
+            spaceBetween: 0,
+            effect: 'fade',
+            centeredSlides: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+
+        });
+    </script>
 @endsection
