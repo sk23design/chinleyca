@@ -1,16 +1,20 @@
 <div class="bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
     <a href="/event/{{ $event->slug }}">
         <img class="h-64 object-cover w-full bg-gray-200"
-            src="{{asset('storage')}}/{{ $event->thumbnail ? $event->thumbnail : $event->venue->cover_image }}" alt=""
-            srcset="">
+            src="{{ asset('storage') }}/{{ $event->thumbnail ? $event->thumbnail : $event->venue->cover_image }}"
+            alt="" srcset="">
 
         <div class="p-5">
 
             <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 {{ $event->title }}</h2>
-            <p>{{$event->venue->name}}</p>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{$event->intro}}</p>
-            {{$event->getRecurringDescription()}}
+
+            @if ($event->venue)
+                <p>{{ $event->venue->name }}</p>
+            @endif
+
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $event->intro }}</p>
+            {{ $event->getRecurringDescription() }}
             <button class="flex align-middle items-center text-teal-600 font-bold mt-4">
                 <span>Read more</span>
                 <svg class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
