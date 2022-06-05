@@ -60,11 +60,12 @@ class Event extends Model
         }
         $days = implode(',', $daysText);
 
-        $start = Carbon::create($this->start);
+        $start = Carbon::parse($this->time_start);
 
-        $end = Carbon::create($this->end);
-        $time = $this->time_start.' until '.$this->time_end;
+        $end = Carbon::parse($this->time_end);
 
-        return $days.' at  '.$time;
+        $time = $start->format('H:i') . ' until ' . $end->format('H:i');
+
+        return $days . ' at  ' . $time;
     }
 }
