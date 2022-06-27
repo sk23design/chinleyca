@@ -10,7 +10,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach ($notices as $notice)
-                    @for ($i = 1; $i < 4; $i++)
+           
                         <div class="">
                             <img class="shadow-lg h-96 mx-auto object-cover border-8 border-white "
                                 src="{{ asset('storage') }}/{{ $notice->poster }}" alt="">
@@ -21,7 +21,7 @@
                             </div>
 
                         </div>
-                    @endfor
+            
                 @endforeach
             </div>
         </div>
