@@ -19,7 +19,7 @@ class Venue extends Model
         return $this->hasMany(\App\Models\Event::class);
     }
 
-    public function intro()
+    public function getIntro()
     {
         return Str::of($this->intro)->limit(120);
     }

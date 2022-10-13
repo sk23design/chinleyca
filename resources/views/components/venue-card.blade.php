@@ -7,7 +7,7 @@
             <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 {{ $venue->name }}</h2>
 
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{$venue->intro()}}</p>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{$venue->getIntro()}}</p>
             <button class="inline-flex align-middle items-center text-teal-600 font-bold">
                 <span>Venue Details</span>
                 <svg class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
