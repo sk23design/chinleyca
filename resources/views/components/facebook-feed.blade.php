@@ -11,7 +11,7 @@
 
 
         @empty($feed)
-        <p class="text-center font-bold text-gray-600">
+        <p class="text-center font-bold text-gray-600 col-span-3">
             sorry the feed cannot be retrieved from Facebook
         </p>
 

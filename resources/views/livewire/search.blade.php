@@ -1,4 +1,4 @@
-<div class="fixed top-0 w-full left-0 z-50 h-screen" x-show.transition="search">
+<div x-cloak class="fixed top-0 w-full left-0 z-50 h-screen" x-show.transition="search">
     <div class="h-screen bg-gray-500 w-full absolute z-1 opacity-90 left-0"></div>
     <div class="max-w-7xl mx-auto px-4 lg:px-8 relative ">
 
