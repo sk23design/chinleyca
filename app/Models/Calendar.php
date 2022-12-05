@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use ICal\ICal;
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
+use ICal\ICal;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Calendar extends Model
 {
@@ -18,36 +18,18 @@ class Calendar extends Model
     public function getEvents()
     {
         return collect($this->data);
-
-        return collect([
-            [
-                'id' => 1,
-                'title' => 'Breakfast',
-                'description' => 'Pancakes! 🥞',
-                'date' => Carbon::today(),
-            ],
-            [
-                'id' => 2,
-                'title' => 'Meeting with Pamela',
-                'description' => 'Work stuff',
-                'date' => Carbon::tomorrow(),
-            ],
-        ]);
     }
 
     public static function syncAll()
     {
-
         $calendars = Calendar::all();
         foreach ($calendars as $calendar) {
-
             $calendar->sync();
         }
     }
 
     public function sync()
     {
-
         $ical = new ICal();
         $ical->initUrl($this->url);
 
