@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Calendar;
 use App\Models\Event;
 use App\Models\Information;
 use App\Models\Venue;
@@ -61,6 +62,12 @@ Route::get('/activity/{event:slug}', function (Event $event) {
     return view('event', ['event' => $event]);
 });
 
+Route::get('/calendar', function () {
+    $page = \App\Models\Page::where('slug', 'calendar')->first();
+
+    return view('calendar', ['page' => $page]);
+});
+
 Route::get('/search', function (Request $request) {
     $venues = Venue::search($request->search)->get()->toArray();
     $events = Event::search($request->search)->get()->toArray();
@@ -91,6 +98,9 @@ Route::get('/contact', function () {
     return view('page', ['page' => $page]);
 });
 
+Route::get('/sync', function () {
+    Calendar::syncAll();
+});
 Route::get('/test', function () {
     /*
 
