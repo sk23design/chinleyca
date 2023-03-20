@@ -92,6 +92,12 @@ Route::get('/about', function () {
     return view('page', ['page' => $page]);
 });
 
+Route::get('/{slug}', function ($slug) {
+    $page = \App\Models\Page::where('slug', $slug)->first();
+
+    return view('page', ['page' => $page]);
+});
+
 Route::get('/contact', function () {
     $page = \App\Models\Page::where('slug', 'contact')->first();
 
