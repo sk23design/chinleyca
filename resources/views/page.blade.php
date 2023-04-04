@@ -38,7 +38,7 @@
 </header>
 <section class="bg-gray-100 py-12">
 
-    <div class="max-w-5xl mx-auto py-8 px-8 bg-white rounded-xl  shadow-xl">
+    <div class="max-w-6xl mx-auto py-8 px-8 bg-white rounded-xl  shadow-xl">
     
 
 
@@ -54,6 +54,18 @@
 
 
     </div>
+</section>
+<section class="bg-gray-100 py-12">
+
+  <div class="max-w-6xl mx-auto py-8 px-8 bg-white rounded-xl  shadow-xl">
+  
+
+
+    @livewire('contact')
+
+
+
+  </div>
 </section>
 @if (count($page->documents))
 <section class="bg-gray-100 py-12">

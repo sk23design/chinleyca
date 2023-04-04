@@ -4,24 +4,18 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
-use Manogi\Tiptap\Tiptap;
 
-class Page extends Resource
+class Contact extends Resource
 {
-    public static $group = 'Content';
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Page::class;
+    public static $model = \App\Models\Contact::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -36,8 +30,13 @@ class Page extends Resource
      * @var array
      */
     public static $search = [
+        'id',
         'name',
+        'email',
+        'phone',
     ];
+
+    public static $group = 'Contact';
 
     /**
      * Get the fields displayed by the resource.
@@ -48,40 +47,13 @@ class Page extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Image::make('Cover Image'),
-            Text::make('Name')->sortable(),
-
-            Slug::make('slug')->from('name'),
-            Textarea::make('Intro')->hideFromIndex(),
-            Text::make('Subtitle')->sortable(),
-            TipTap::make('Description')->buttons([
-                'heading',
-                'italic',
-                'bold',
-                'code',
-                'link',
-                'strike',
-                'underline',
-                'superscript',
-                'subscript',
-                'bullet_list',
-                'ordered_list',
-                'code_block',
-                'blockquote',
-                'table',
-                'horizontal_rule',
-            ])
-            ->headingLevels([2, 3, 4]),
-
-            Text::make('Meta Title')->hideFromIndex(),
-            Select::make('Template')->options([
-                'Page' => 'Page',
-                'Events' => 'Events',
-                'Venues' => 'Venues',
-            ])->default('Page'),
-            Boolean::make('Enabled')->default(true),
-            Boolean::make('Show Contact Form')->default(false),
-            HasMany::make('Documents'),
+            Text::make(__('Name'), 'name')->sortable(),
+            Text::make(__('Email'), 'email')->sortable(),
+            Text::make(__('Phone'), 'phone')->sortable(),
+            Boolean::make(__('Status'), 'status')->sortable(),
+            Textarea::make(__('Fundraising details'), 'fundraising')->hideFromIndex()->alwaysShow(),
+            Textarea::make(__('Donation of voucher, prize or reward.'), 'donation')->hideFromIndex()->alwaysShow(),
+            Textarea::make(__('Comments'), 'comments')->hideFromIndex()->alwaysShow(),
         ];
     }
 
