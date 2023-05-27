@@ -92,8 +92,8 @@ Route::get('/about', function () {
     return view('page', ['page' => $page]);
 });
 
-Route::get('/{slug}', function ($slug) {
-    $page = \App\Models\Page::where('slug', $slug)->first();
+Route::get('/community-centre', function () {
+    $page = \App\Models\Page::where('slug', 'community-centre')->first();
 
     return view('page', ['page' => $page]);
 });

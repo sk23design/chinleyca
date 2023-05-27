@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Panel;
 use Manogi\Tiptap\Tiptap;
 
 class Page extends Resource
@@ -81,7 +82,20 @@ class Page extends Resource
             ])->default('Page'),
             Boolean::make('Enabled')->default(true),
             Boolean::make('Show Contact Form')->default(false),
+            new Panel('Fundraising', $this->fundraisingFields()),
             HasMany::make('Documents'),
+         
+        ];
+    }
+
+
+    public function fundraisingFields()
+    {
+        return [
+            Boolean::make('Show Fundraising Target')->default(false),
+            
+            Text::make('Fundraising Target')->hideFromIndex(),
+            Text::make('Fundraising So Far')->hideFromIndex(),
         ];
     }
 

@@ -10,17 +10,17 @@
             <h1
                 class="relative z-10 my-8 text-gray-900 font-extrabold tracking-tight sm:tracking-normal leading-none text-4xl sm:text-5xl text-center lg:text-left">
                 Chinley, Buxworth & Brownside Association
-                <span class="block text-teal-600">{{$page->name}}</span>
+                <span class="block text-teal-600">{{$page->name ?? ''}}</span>
             </h1>
             <p class="relative z-10 mb-10 mx-auto text-gray-600 text-center md:text-left text-lg sm:text-xl md:max-w-xl lg:max-w-none">
-                {{$page->intro}}
+                {{$page->intro ?? ''}}
 
             </p>
 
 
         </div>
     </div>
-
+    
     <div class="relative -mt-15 sm:mt-0 w-full sm:h-72 md:h-96 lg:h-full lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <picture>
             <img src="{{ asset('storage') }}/{{$page->cover_image}}"
@@ -36,6 +36,30 @@
         <path d="M50 0h50L50 100H0z"></path>
     </svg>
 </header>
+@if ($page->fundraising_target)
+    
+
+<section class="bg-gray-100 py-12">
+
+  <div class="max-w-6xl mx-auto py-8 px-8 bg-white rounded-xl  shadow-xl">
+    <div class="relative pt-1">     <div>
+      <h3 class="text-center font-bold text-2xl">Fundraising Target £{{$page->fundraising_target}}</h3>
+          </div>
+      <div class="flex mb-2 items-center justify-between">
+   
+        <div class="text-right">
+          <span class="text-xs font-semibold inline-block text-pink-600">
+            {{round($page->fundraising_so_far / $page->fundraising_target * 100,0)}}%
+          </span>
+        </div>
+      </div>
+      <div class="overflow-hidden h-6 mb-4 text-xs flex rounded-full bg-pink-200">
+        <div style="width:{{$page->fundraising_so_far / $page->fundraising_target * 100}}%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"></div>
+      </div>
+    </div>
+  </div>
+</section>
+@endif
 <section class="bg-gray-100 py-12">
 
     <div class="max-w-6xl mx-auto py-8 px-8 bg-white rounded-xl  shadow-xl">
