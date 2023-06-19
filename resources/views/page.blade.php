@@ -37,13 +37,19 @@
     </svg>
 </header>
 @if ($page->fundraising_target)
-    
 
+
+
+  
 <section class="bg-gray-100 py-12">
 
   <div class="max-w-6xl mx-auto py-8 px-8 bg-white rounded-xl  shadow-xl">
+
+
+
+
     <div class="relative pt-1">     <div>
-      <h3 class="text-center font-bold text-2xl">Fundraising Target £{{$page->fundraising_target}}</h3>
+      <h3 class="text-center font-bold text-2xl">£{{$page->fundraising_so_far}} Raised Of Our Target £{{$page->fundraising_target}}</h3>
           </div>
       <div class="flex mb-2 items-center justify-between">
    
@@ -130,4 +136,5 @@
   }
 
 </script>
+
 @endsection
