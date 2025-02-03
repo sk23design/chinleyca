@@ -98,8 +98,8 @@ Route::get('/about', function () {
     return view('page', ['page' => $page]);
 });
 
-Route::get('/community-centre', function () {
-    $page = \App\Models\Page::where('slug', 'community-centre')->first();
+Route::get('/chinley-centre-project', function () {
+    $page = \App\Models\Page::where('slug', 'chinley-centre-project')->first();
 
     return view('page', ['page' => $page]);
 });
