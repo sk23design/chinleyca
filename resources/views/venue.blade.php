@@ -166,6 +166,31 @@
                 </div>
         </div>
         @endif
+        @if (count($venue->rooms))
+        <div class="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="rounded-lg bg-white shadow-lg p-8">
+            <h3 class="text-2xl text-center font-bold">Venue Rooms</h3>
+   
+        @forelse ($venue->rooms as $room)
+            <div class="grid grid-cols-3 items-center border-b p-8">
+                
+                <div>{{$room->name}}</div>
+                <div>£{{$room->price}} Per Hour</div>
+                <div class="text-right">
+                    <a href="{{url('book/room/'.$room->id)}}" class="inline-flex items-center justify-center border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:border-teal-600 focus:shadow-outline-teal transition duration-150 ease-in-out px-8 py-3 md:py-2 md:px-8 md:text-lg">Book Now</a>
+                </div>
+          
+
+
+                </div>  
+        @empty
+            
+        @endforelse
+                </div>
+            </div>
+        </div>
+        @endif
         <div id="events" class="text-gray-50 bg-gray-100">
             @include('assets.wave')
         </div>
@@ -200,7 +225,6 @@
 
             </div>
         </div>
-
         <div class="text-gray-100 bg-blue-500">
             @include('assets.wave')
         </div>

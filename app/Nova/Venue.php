@@ -58,7 +58,7 @@ class Venue extends Resource
             Text::make('Website')->hideFromIndex(),
             Boolean::make('Use External Website')->help('Bookings should be made directly with the venue'),
             HasMany::make('Events'),
-           //HasMany::make('Rooms'),
+           HasMany::make('Rooms'),
            new Panel('Contact Details', $this->contactPanel()),
            new Panel('Occupancy Details', $this->addressPanel()),
            new Panel('Address Details', $this->occupancyPanel()),

@@ -9,6 +9,23 @@
 @section('content')
     <main>
         <header class="relative bg-gray-100 lg:bg-gray-50">
+            <div class="swiper homeslider">
+
+                <div class="swiper-wrapper">
+
+                    @foreach ($slides as $slide)
+                        <div class="swiper-slide">
+                            <div class="" style="height:600px;">
+                                <picture>
+                                    <img style="height:600px;" src="{{ asset('storage/' . $slide->image) }}"
+                                        class=" object-cover w-full h-full" alt="{{$slide->name}}" aria-hidden="true">
+                                </picture>
+                            </div>
+                        </div>    
+                     
+                        @endforeach
+                </div>
+            </div>
             <div class="text-center max-w-5xl mx-auto py-12 px-8">
                 <div class="w-32 mx-auto"> @include('assets.logo')</div>
                 <h1
@@ -31,30 +48,7 @@
                     activities, events and venues for all.
                     For more information about the Community Association and how we operate, </p>
             </div>
-            <div class="swiper homeslider">
-
-                <div class="swiper-wrapper">
-
-                    @for ($i = 1; $i < 6; $i++)
-                        <div class="swiper-slide">
-
-
-
-                            <div class="h-96">
-                                <picture>
-                                    <img src="{{ asset('storage/images/slider/slider' . $i . '.jpg') }}"
-                                        class="h-96 object-cover w-full" alt="Venue" aria-hidden="true">
-                                </picture>
-                            </div>
-
-
-
-
-
-                        </div>
-                    @endfor
-                </div>
-            </div>
+         
         </header>
 
 

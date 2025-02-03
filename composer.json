@@ -19,7 +19,7 @@
     ],
     "require": {
         "php": "^7.3|^8.0",
-        "asantibanez/livewire-calendar": "^2.1",
+        "asantibanez/livewire-calendar": "^2.2",
         "czemu/nova-calendar-tool": "^1.3",
         "eluceo/ical": "^2.7",
         "fruitcake/laravel-cors": "^2.0",

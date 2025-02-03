@@ -2,17 +2,22 @@
 
 namespace App\View\Components;
 
+use App\Models\Slideshow;
 use Illuminate\View\Component;
 
-class Slider extends Component
+class slider extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public $is_home_page = false;
+    public $slides = [];
+
+    public function __construct($is_home_page = false)
     {
+        $this->is_home_page = $is_home_page;
     }
 
     /**
@@ -22,24 +27,12 @@ class Slider extends Component
      */
     public function render()
     {
-        $slides = [
-            [
-            'slide' => '5607mWZfxynNMMYGUd9CkeJKP6b96rqngAdAa49D.jpg',
-            'title' => 'Chinley Primary',
-            'intro' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis velit voluptas at porro, iure iusto corporis officiis minima repellendus repellat animi omnis eos quis consequatur laudantium illo ducimus pariatur quod',
-            ],
-            [
-            'slide' => 'LjMFvd9xIxhJEX93dXJqrt6sPCKDng84BHHCwE6M.jpg',
-            'title' => 'Outside Space',
-            'intro' => 'Lorem ipsum. Perspiciatis velit voluptas at porro, iure iusto corporis officiis minima repellendus repellat animi omnis eos quis consequatur laudantium illo ducimus pariatur quod',
-            ],
-            [
-            'slide' => 'staff.jpg',
-            'title' => 'New Building',
-            'intro' => 'Perspiciatis velit voluptas at porro, iure iusto corporis officiis minima repellendus repellat animi omnis eos quis consequatur laudantium illo ducimus pariatur quod',
-            ],
-    ];
+        $slideshow = Slideshow::firstWhere('show_on_homepage', 1);
 
-        return view('components.slider', ['slides' => $slides]);
+        if ($slideshow && count($slideshow->slides)) {
+            $this->slides = $slideshow->slides;
+        }
+
+        return view('components.slider', ['slides' => $this->slides]);
     }
 }

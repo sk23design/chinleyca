@@ -1,9 +1,10 @@
 <?php
 
-use App\Models\Calendar;
+use App\Models\Room;
 use App\Models\Event;
-use App\Models\Information;
 use App\Models\Venue;
+use App\Models\Calendar;
+use App\Models\Information;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,7 @@ Route::get('/', function () {
         'events' => \App\Models\Event::take(3)->get(),
         'villages' => \App\Models\Village::all(),
         'page' => $page,
+        'slides' => \App\Models\Slide::all(),
         ]
     );
 });
@@ -60,6 +62,10 @@ Route::get('/activities', function () {
 
 Route::get('/activity/{event:slug}', function (Event $event) {
     return view('event', ['event' => $event]);
+});
+
+Route::get('/book/room/{room}', function (Room $room) {
+    return view('book', ['room' => $room]);
 });
 
 Route::get('/calendar', function () {
