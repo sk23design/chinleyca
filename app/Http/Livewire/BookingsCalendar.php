@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Booking;
+use App\Models\Event;
 use Livewire\Component;
 use Illuminate\Support\Collection;
 use Asantibanez\LivewireCalendar\LivewireCalendar;
@@ -15,12 +16,12 @@ class BookingsCalendar extends LivewireCalendar
     public function events() : Collection
     {
 
-        $bookings = Booking::where('room_id', $this->room->id)->where('status','<>','cancelled')->get();  
+        $room_bookings = Booking::where('room_id', $this->room->id)->where('status','<>','cancelled')->get();  
 
-        $events = [];
+        $bookings = [];
 
 
-        foreach ($bookings as $booking) {
+        foreach ($room_bookings as $booking) {
 
 
             $name =  $booking->name .' '.$booking->room->name;
@@ -29,7 +30,7 @@ class BookingsCalendar extends LivewireCalendar
                 $name = $name . ' (Pending)';
             }
 
-            $events[] = [
+            $bookings[] = [
                 'id' => $booking->id,
                 'title' => $name,
                 'start' => $booking->time,
@@ -37,7 +38,52 @@ class BookingsCalendar extends LivewireCalendar
             ];
         }
 
-        return collect($events);
+        // Get events for this room
+
+        $events = Event::where('room_id', $this->room->id)->get();
+
+        foreach ($events as $event) {
+            if($event->recurring)
+            {
+                // Get today get days and every from event 
+    
+                $today = \Carbon\Carbon::today();
+                $days = $event->days;
+                $every = $event->every[0];
+                
+                if ($every == 1) { // Weekly
+                    for ($i = 0; $i < 52; $i++) { // Loop for a year
+                        foreach ($days as $day) {
+                            $date = $today->copy()->startOfWeek()->addDays($day - 1)->addWeeks($i);
+                            $bookings[] = [
+                                'id' => $event->id,
+                                'title' => $event->title ,
+                                'start' => $event->time_start,
+                                'date' => $date->format('Y-m-d'),
+                            ];
+                        }
+                    }
+                } elseif ($every == 2) { // Monthly
+                    for ($i = 0; $i < 12; $i++) { // Loop for a year
+                        foreach ($days as $day) {
+                            $date = $today->copy()->startOfMonth()->addDays($day - 1)->addMonths($i);
+                            $bookings[] = [
+                                'id' => $event->id,
+                                'title' => $event->title,
+                                'start' => $event->time_start,
+                                'date' => $date->format('Y-m-d'),
+                            ];
+                        }
+                    }
+                }
+            } else {
+                // ... existing code ...
+            }
+        }
+
+        // order by time
+
+        return collect($bookings)->sortBy('start');
 
     }
 

@@ -32,7 +32,7 @@ class Event extends Resource
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -41,7 +41,7 @@ class Event extends Resource
      */
     public static $search = [
         'id',
-        'name',
+        'title',
     ];
 
     /**
@@ -60,6 +60,7 @@ class Event extends Resource
             Text::make('Title')->sortable(),
             Slug::make('Slug')->from('title')->hideFromIndex(),
             BelongsTo::make(__('Venue')),
+            BelongsTo::make(__('Room'))->nullable()->help('Leave blank if whole venue is used'),
             Select::make('type')->options(['Private Booking', 'Public Booking', 'Maintenance', 'Not Available', 'Other'])->hideFromIndex(),
             Tiptap::make('description'),
             Date::make('start')->hideFromIndex(),

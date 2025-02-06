@@ -25,6 +25,11 @@ class Event extends Model
         return $this->belongsTo(\App\Models\Venue::class, 'venue_id', 'id');
     }
 
+    public function room()
+    {
+        return $this->belongsTo(\App\Models\Room::class, 'room_id', 'id');
+    }
+
     public function related()
     {
         return Event::whereJsonContains('categories', $this->categories)->where('id', '<>', $this->id)->get();
