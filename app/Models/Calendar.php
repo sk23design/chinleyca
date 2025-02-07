@@ -60,6 +60,25 @@ class Calendar extends Model
                 'created' => @$event->created,
             ];
         }
+        $confirmedBookings = Booking::where('status', 'confirmed')->get();
+        foreach ($confirmedBookings as $booking) {
+            $data[] = [
+                'id' => $booking->id,
+                'title' => $booking->name,
+                'start' => $booking->start_time->format('d-m-Y H:i'),
+                'end' => $booking->end_time->format('d-m-Y H:i'),
+                'date' => $booking->start_time->format('d-m-Y H:i'),
+                'description' => $booking->description,
+                'location' => $booking->room->name,
+                'status' => $booking->status,
+                'uid' => $booking->uid,
+                'sequence' => $booking->sequence,
+                'created' => $booking->created_at->format('d-m-Y H:i'),
+            ];
+        }
+        
+
+
         $this->raw_data = $raw_data;
         $this->data = $data;
         $this->save();

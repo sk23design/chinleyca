@@ -71,6 +71,6 @@ class Event extends Model
 
         $time = $start->format('H:i') . ' until ' . $end->format('H:i');
 
-        return $days . ' at  ' . $time;
+        return $days . ' at ' . $time;
     }
 }
