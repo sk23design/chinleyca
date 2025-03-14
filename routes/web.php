@@ -106,7 +106,12 @@ Route::get('/chinley-centre-project', function () {
 
 Route::get('/contact', function () {
     $page = \App\Models\Page::where('slug', 'contact')->first();
+    return view('page', ['page' => $page]);
+});
 
+
+Route::get('/policies', function () {
+    $page = \App\Models\Page::where('slug', 'policies')->first();
     return view('page', ['page' => $page]);
 });
 
