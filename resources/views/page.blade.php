@@ -85,6 +85,7 @@
 
     </div>
 </section>
+@if($page->show_contact_form)
 <section class="bg-gray-100 py-12">
 
   <div class="max-w-6xl mx-auto py-8 px-8 bg-white rounded-xl  shadow-xl">
@@ -97,6 +98,7 @@
 
   </div>
 </section>
+@endif
 @if (count($page->documents))
 <section class="bg-gray-100">
 
