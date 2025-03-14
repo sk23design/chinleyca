@@ -12,23 +12,14 @@ class SchoolCalendar extends LivewireCalendar
     {
         // return \App\Models\Event::whereDate('start', '>=', date('Y-m-d'))->get();
 
-        $calendar = \App\Models\Calendar::find(1)->first();
-
-        return $calendar->getEvents();
+        $calendar = \App\Models\Calendar::first();
+        if($calendar){
+            return $calendar->getEvents();
+        }
+   
 
         return collect([
-            [
-                'id' => 1,
-                'title' => 'Breakfast',
-                'description' => 'Pancakes! 🥞',
-                'date' => Carbon::today(),
-            ],
-            [
-                'id' => 2,
-                'title' => 'Meeting with Pamela',
-                'description' => 'Work stuff',
-                'date' => Carbon::tomorrow(),
-            ],
+           
         ]);
     }
 
