@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Calendar;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class CalendarSync extends Command
 {
@@ -38,6 +39,9 @@ class CalendarSync extends Command
      */
     public function handle()
     {
-        Calendar::syncAll();
+        $this->info('Starting calendar sync...');
+        $added = Calendar::syncAll();
+        $this->info('Calendar sync completed.');
+        Log::info('Calendars synced: ' . $added);
     }
 }

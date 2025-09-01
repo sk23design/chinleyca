@@ -62,12 +62,36 @@ class Calendar extends Model
         }
         $confirmedBookings = Booking::where('status', 'confirmed')->get();
         foreach ($confirmedBookings as $booking) {
+
+
+            /*
+              `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `venue_id` int(11) DEFAULT NULL,
+  `room_id` int(11) DEFAULT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `duration` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL DEFAULT 'pending',
+  `payment_status` varchar(255) NOT NULL DEFAULT 'unpaid',
+  `payment_method` varchar(255) DEFAULT NULL,
+  `notes` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+
+  */
+
+            $start = Carbon::parse($booking->date . ' ' . $booking->time);
+            $end = $start->copy()->addMinutes($booking->duration);
+
             $data[] = [
                 'id' => $booking->id,
                 'title' => $booking->name,
-                'start' => $booking->start_time->format('d-m-Y H:i'),
-                'end' => $booking->end_time->format('d-m-Y H:i'),
-                'date' => $booking->start_time->format('d-m-Y H:i'),
+                'start' => $start->format('d-m-Y H:i'),
+                'end' => $end->format('d-m-Y H:i'),
+                'date' => $booking->date->format('d-m-Y H:i'),
                 'description' => $booking->description,
                 'location' => $booking->room->name,
                 'status' => $booking->status,
