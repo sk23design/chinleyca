@@ -83,7 +83,7 @@ class Calendar extends Model
 
   */
 
-            $start = Carbon::parse($booking->date . ' ' . $booking->time);
+            $start = Carbon::parse(date('Y-m-d',$booking->date) . ' ' . $booking->time);
             $end = $start->copy()->addMinutes($booking->duration);
 
             $data[] = [
